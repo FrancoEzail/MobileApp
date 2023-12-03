@@ -46,6 +46,10 @@ tbody tr:nth-child(even){
 .centre{
   text-align: center;
 }
+.note{
+  font-weight: 600;
+  color: red;
+}
 
 ._bar{
   display: flex;
