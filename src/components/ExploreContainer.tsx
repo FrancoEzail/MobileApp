@@ -4,52 +4,158 @@ interface ContainerProps { }
 
 const ExploreContainer: React.FC<ContainerProps> = () => {
   const [dataLoaded, setDataLoaded] = useState(false);
-  const teamTableStats = 
+  const teamTableGeneral = 
   [
-    {"name":"Bayern","teamId":37,"teamName":"Bayern Munich","teamRegionName":"Allemagne","seasonId":0,"seasonName":null,"tournamentId":3,"isOpta":true,"tournamentRegionId":81,"tournamentRegionCode":"de","tournamentRegionName":"Allemagne","regionCode":"de","tournamentName":"Bundesliga","rating":7.16,"ranking":1,"apps":12,"goal":43.0,"yellowCard":17.0,"redCard":1.0,"shotsPerGame":19.916666666666668,"aerialWonPerGame":12.75,"possession":0.62859166666666655,"passSuccess":0.88811188811188813},{"name":"PSG","teamId":304,"teamName":"Paris Saint-Germain","teamRegionName":"France","seasonId":0,"seasonName":null,"tournamentId":22,"isOpta":true,"tournamentRegionId":74,"tournamentRegionCode":"fr","tournamentRegionName":"France","regionCode":"fr","tournamentName":"Ligue 1","rating":7.04,"ranking":2,"apps":13,"goal":34.0,"yellowCard":17.0,"redCard":0.0,"shotsPerGame":16.615384615384617,"aerialWonPerGame":7.0,"possession":0.680476923076923,"passSuccess":0.90566240464166758},{"name":"Leverkusen","teamId":36,"teamName":"Bayer Leverkusen","teamRegionName":"Allemagne","seasonId":0,"seasonName":null,"tournamentId":3,"isOpta":true,"tournamentRegionId":81,"tournamentRegionCode":"de","tournamentRegionName":"Allemagne","regionCode":"de","tournamentName":"Bundesliga","rating":6.98,"ranking":3,"apps":12,"goal":37.0,"yellowCard":23.0,"redCard":0.0,"shotsPerGame":16.25,"aerialWonPerGame":9.5833333333333339,"possession":0.60575833333333329,"passSuccess":0.88899839842306272},{"name":"Man City","teamId":167,"teamName":"Manchester City","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.96,"ranking":4,"apps":13,"goal":33.0,"yellowCard":23.0,"redCard":2.0,"shotsPerGame":16.46153846153846,"aerialWonPerGame":7.9230769230769234,"possession":0.62333846153846151,"passSuccess":0.90200071882113331},{"name":"Real Madrid","teamId":52,"teamName":"Real Madrid","teamRegionName":"Espagne","seasonId":0,"seasonName":null,"tournamentId":4,"isOpta":true,"tournamentRegionId":206,"tournamentRegionCode":"es","tournamentRegionName":"Espagne","regionCode":"es","tournamentName":"LaLiga","rating":6.93,"ranking":5,"apps":14,"goal":31.0,"yellowCard":26.0,"redCard":1.0,"shotsPerGame":17.5,"aerialWonPerGame":8.3571428571428577,"possession":0.57288571428571422,"passSuccess":0.89664429530201339},{"name":"Inter","teamId":75,"teamName":"Inter","teamRegionName":"Italie","seasonId":0,"seasonName":null,"tournamentId":5,"isOpta":true,"tournamentRegionId":108,"tournamentRegionCode":"it","tournamentRegionName":"Italie","regionCode":"it","tournamentName":"Serie A","rating":6.89,"ranking":6,"apps":13,"goal":30.0,"yellowCard":17.0,"redCard":0.0,"shotsPerGame":16.307692307692307,"aerialWonPerGame":15.23076923076923,"possession":0.55596923076923077,"passSuccess":0.8640606767794633},{"name":"Stuttgart","teamId":41,"teamName":"VfB Stuttgart","teamRegionName":"Allemagne","seasonId":0,"seasonName":null,"tournamentId":3,"isOpta":true,"tournamentRegionId":81,"tournamentRegionCode":"de","tournamentRegionName":"Allemagne","regionCode":"de","tournamentName":"Bundesliga","rating":6.86,"ranking":7,"apps":12,"goal":31.0,"yellowCard":16.0,"redCard":0.0,"shotsPerGame":15.916666666666666,"aerialWonPerGame":15.916666666666666,"possession":0.5767,"passSuccess":0.85678868309756451},{"name":"Atletico","teamId":63,"teamName":"Atletico Madrid","teamRegionName":"Espagne","seasonId":0,"seasonName":null,"tournamentId":4,"isOpta":true,"tournamentRegionId":206,"tournamentRegionCode":"es","tournamentRegionName":"Espagne","regionCode":"es","tournamentName":"LaLiga","rating":6.84,"ranking":8,"apps":13,"goal":30.0,"yellowCard":25.0,"redCard":1.0,"shotsPerGame":13.461538461538462,"aerialWonPerGame":12.692307692307692,"possession":0.5276384615384615,"passSuccess":0.8474453611231727},{"name":"Barcelona","teamId":65,"teamName":"Barcelona","teamRegionName":"Espagne","seasonId":0,"seasonName":null,"tournamentId":4,"isOpta":true,"tournamentRegionId":206,"tournamentRegionCode":"es","tournamentRegionName":"Espagne","regionCode":"es","tournamentName":"LaLiga","rating":6.8100000000000005,"ranking":9,"apps":14,"goal":27.0,"yellowCard":33.0,"redCard":1.0,"shotsPerGame":15.357142857142858,"aerialWonPerGame":12.142857142857142,"possession":0.66742857142857148,"passSuccess":0.89156210429377225},{"name":"Newcastle","teamId":23,"teamName":"Newcastle","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.8,"ranking":10,"apps":13,"goal":31.0,"yellowCard":37.0,"redCard":0.0,"shotsPerGame":13.153846153846153,"aerialWonPerGame":10.846153846153847,"possession":0.53266153846153852,"passSuccess":0.843531202435312},{"name":"Tottenham","teamId":30,"teamName":"Tottenham","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.8,"ranking":11,"apps":13,"goal":25.0,"yellowCard":34.0,"redCard":3.0,"shotsPerGame":16.153846153846153,"aerialWonPerGame":8.76923076923077,"possession":0.60345384615384612,"passSuccess":0.87973333333333337},{"name":"Arsenal","teamId":13,"teamName":"Arsenal","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.79,"ranking":12,"apps":13,"goal":27.0,"yellowCard":17.0,"redCard":2.0,"shotsPerGame":14.538461538461538,"aerialWonPerGame":13.307692307692308,"possession":0.61133076923076923,"passSuccess":0.87210569327158816},{"name":"Liverpool","teamId":26,"teamName":"Liverpool","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.79,"ranking":13,"apps":13,"goal":28.0,"yellowCard":23.0,"redCard":4.0,"shotsPerGame":17.307692307692307,"aerialWonPerGame":14.384615384615385,"possession":0.57144615384615383,"passSuccess":0.86113382393022619},{"name":"Monaco","teamId":248,"teamName":"Monaco","teamRegionName":"France","seasonId":0,"seasonName":null,"tournamentId":22,"isOpta":true,"tournamentRegionId":74,"tournamentRegionCode":"fr","tournamentRegionName":"France","regionCode":"fr","tournamentName":"Ligue 1","rating":6.78,"ranking":14,"apps":13,"goal":27.0,"yellowCard":31.0,"redCard":0.0,"shotsPerGame":14.692307692307692,"aerialWonPerGame":11.23076923076923,"possession":0.5515692307692307,"passSuccess":0.83382966051220964},{"name":"RBL","teamId":7614,"teamName":"RB Leipzig","teamRegionName":"Allemagne","seasonId":0,"seasonName":null,"tournamentId":3,"isOpta":true,"tournamentRegionId":81,"tournamentRegionCode":"de","tournamentRegionName":"Allemagne","regionCode":"de","tournamentName":"Bundesliga","rating":6.78,"ranking":15,"apps":12,"goal":29.0,"yellowCard":19.0,"redCard":0.0,"shotsPerGame":14.5,"aerialWonPerGame":12.75,"possession":0.57876666666666665,"passSuccess":0.84418356456776944},{"name":"Napoli","teamId":276,"teamName":"Napoli","teamRegionName":"Italie","seasonId":0,"seasonName":null,"tournamentId":5,"isOpta":true,"tournamentRegionId":108,"tournamentRegionCode":"it","tournamentRegionName":"Italie","regionCode":"it","tournamentName":"Serie A","rating":6.77,"ranking":16,"apps":13,"goal":26.0,"yellowCard":23.0,"redCard":1.0,"shotsPerGame":17.923076923076923,"aerialWonPerGame":11.076923076923077,"possession":0.58513076923076923,"passSuccess":0.86794067313177414},{"name":"Aston Villa","teamId":24,"teamName":"Aston Villa","teamRegionName":"Angleterre","seasonId":0,"seasonName":null,"tournamentId":2,"isOpta":true,"tournamentRegionId":252,"tournamentRegionCode":"gb-eng","tournamentRegionName":"Angleterre","regionCode":"gb-eng","tournamentName":"Premier League","rating":6.76,"ranking":17,"apps":13,"goal":31.0,"yellowCard":32.0,"redCard":0.0,"shotsPerGame":14.923076923076923,"aerialWonPerGame":8.1538461538461533,"possession":0.52288461538461539,"passSuccess":0.862257184138706},{"name":"Juventus","teamId":87,"teamName":"Juventus","teamRegionName":"Italie","seasonId":0,"seasonName":null,"tournamentId":5,"isOpta":true,"tournamentRegionId":108,"tournamentRegionCode":"it","tournamentRegionName":"Italie","regionCode":"it","tournamentName":"Serie A","rating":6.76,"ranking":18,"apps":13,"goal":20.0,"yellowCard":35.0,"redCard":0.0,"shotsPerGame":13.846153846153847,"aerialWonPerGame":13.615384615384615,"possession":0.4751538461538462,"passSuccess":0.83489647849938065},{"name":"Lille","teamId":607,"teamName":"Lille","teamRegionName":"France","seasonId":0,"seasonName":null,"tournamentId":22,"isOpta":true,"tournamentRegionId":74,"tournamentRegionCode":"fr","tournamentRegionName":"France","regionCode":"fr","tournamentName":"Ligue 1","rating":6.76,"ranking":19,"apps":13,"goal":17.0,"yellowCard":28.0,"redCard":1.0,"shotsPerGame":12.538461538461538,"aerialWonPerGame":11.692307692307692,"possession":0.57123076923076921,"passSuccess":0.85387602473752333},{"name":"Girona","teamId":2783,"teamName":"Girona","teamRegionName":"Espagne","seasonId":0,"seasonName":null,"tournamentId":4,"isOpta":true,"tournamentRegionId":206,"tournamentRegionCode":"es","tournamentRegionName":"Espagne","regionCode":"es","tournamentName":"LaLiga","rating":6.75,"ranking":20,"apps":14,"goal":32.0,"yellowCard":32.0,"redCard":0.0,"shotsPerGame":13.714285714285714,"aerialWonPerGame":11.785714285714286,"possession":0.56750714285714288,"passSuccess":0.87019027484143763}
+    {"equipe": "Bayern Munich","competition": "Bundesliga","goal": 43,"shotsPerGame": 19.9,"yellowCard": 17,"redCard": 1,"possession": 62.9,"passSuccess": 88.8,"aerialWonPerGame": 12.8,"note": 7.16},{"equipe": "Paris Saint-Germain","competition": "Ligue 1","goal": 34,"tirs_pm": 16.6,"yellowCard": 17,"redCard": 0,"possession": 68.0,"passSuccess": 90.6,"aerialWonPerGame": 7.0,"note": 7.04},{"equipe": "Bayer Leverkusen","competition": "Bundesliga","goal": 37,"tirs_pm": 16.3,"yellowCard": 23,"redCard": 0,"possession": 60.6,"passSuccess": 88.9,"aerialWonPerGame": 9.6,"note": 6.98},{"equipe": "Manchester City","competition": "Premier League","goal": 33,"tirs_pm": 16.5,"yellowCard": 23,"redCard": 2,"possession": 62.3,"passSuccess": 90.2,"aerialWonPerGame": 7.9,"note": 6.96},{"equipe": "Real Madrid","competition": "LaLiga","goal": 33,"tirs_pm": 17.1,"yellowCard": 28,"redCard": 1,"possession": 58.3,"passSuccess": 90.0,"aerialWonPerGame": 8.1,"note": 6.93},{"equipe": "Inter","competition": "Serie A","goal": 30,"tirs_pm": 16.3,"yellowCard": 17,"redCard": 0,"possession": 55.6,"passSuccess": 86.4,"aerialWonPerGame": 15.2,"note": 6.89},{"equipe": "VfB Stuttgart","competition": "Bundesliga","goal": 33,"tirs_pm": 16.2,"yellowCard": 17,"redCard": 0,"possession": 57.7,"passSuccess": 85.9,"aerialWonPerGame": 15.2,"note": 6.87},{"equipe": "Atletico Madrid","competition": "LaLiga","goal": 30,"tirs_pm": 13.5,"yellowCard": 25,"redCard": 1,"possession": 52.8,"passSuccess": 84.7,"aerialWonPerGame": 12.7,"note": 6.84},{"equipe": "Newcastle","competition": "Premier League","goal": 32,"tirs_pm": 13.8,"yellowCard": 38,"redCard": 0,"possession": 53.6,"passSuccess": 84.3,"aerialWonPerGame": 11.5,"note": 6.83},{"equipe": "Barcelona","competition": "LaLiga","goal": 27,"tirs_pm": 15.4,"yellowCard": 33,"redCard": 1,"possession": 66.7,"passSuccess": 89.2,"aerialWonPerGame": 12.1,"note": 6.81},{"equipe": "Tottenham","competition": "Premier League","goal": 25,"tirs_pm": 16.2,"yellowCard": 34,"redCard": 3,"possession": 60.3,"passSuccess": 88.0,"aerialWonPerGame": 8.8,"note": 6.80},{"equipe": "Liverpool","competition": "Premier League","goal": 28,"tirs_pm": 17.3,"yellowCard": 23,"redCard": 4,"possession": 57.1,"passSuccess": 86.1,"aerialWonPerGame": 14.4,"note": 6.79},{"equipe": "RB Leipzig","competition": "Bundesliga","goal": 31,"tirs_pm": 15.2,"yellowCard": 21,"redCard": 0,"possession": 58.9,"passSuccess": 84.8,"aerialWonPerGame": 12.7,"note": 6.79},{"equipe": "Arsenal","competition": "Premier League","goal": 29,"tirs_pm": 14.9,"yellowCard": 18,"redCard": 2,"possession": 60.8,"passSuccess": 87.3,"aerialWonPerGame": 13.0,"note": 6.78},{"equipe": "Monaco","competition": "Ligue 1","goal": 27,"tirs_pm": 14.7,"yellowCard": 31,"redCard": 0,"possession": 55.2,"passSuccess": 83.4,"aerialWonPerGame": 11.2,"note": 6.78},{"equipe": "Napoli","competition": "Serie A","goal": 26,"tirs_pm": 17.9,"yellowCard": 23,"redCard": 1,"possession": 58.5,"passSuccess": 86.8,"aerialWonPerGame": 11.1,"note": 6.77},{"equipe": "Aston Villa","competition": "Premier League","goal": 31,"tirs_pm": 14.9,"yellowCard": 32,"redCard": 0,"possession": 52.3,"passSuccess": 86.2,"aerialWonPerGame": 8.2,"note": 6.76},{"equipe": "Juventus","competition": "Serie A","goal": 22,"tirs_pm": 14.1,"yellowCard": 37,"redCard": 0,"possession": 46.5,"passSuccess": 83.5,"aerialWonPerGame": 13.8,"note": 6.76},{"equipe": "Lille","competition": "Ligue 1","goal": 17,"tirs_pm": 12.5,"yellowCard": 28,"redCard": 1,"possession": 57.1,"passSuccess": 85.4,"aerialWonPerGame": 11.7,"note": 6.76},{"equipe": "Girona","competition": "LaLiga","goal": 34,"tirs_pm": 13.4,"yellowCard": 35,"redCard": 0,"possession": 58.0,"passSuccess": 87.3,"aerialWonPerGame": 11.8,"note": 6.74}
   ];  
+  const teamTableHome = 
+  [
+    {"equipe":"Bayern Munich","competition":"Bundesliga","goal":27,"shotsPerGame":21.7,"yellowCard":4,"redCard":1,"possession":61.9,"passSuccess":88.8,"aerialWonPerGame":13,"note":7.21},{"equipe":"Bayer Leverkusen","competition":"Bundesliga","goal":21,"shotsPerGame":19.3,"yellowCard":8,"redCard":0,"possession":65.5,"passSuccess":90.2,"aerialWonPerGame":11.7,"note":7.05},{"equipe":"Aston Villa","competition":"Premier League","goal":23,"shotsPerGame":15.3,"yellowCard":17,"redCard":0,"possession":57.6,"passSuccess":86.8,"aerialWonPerGame":9.5,"note":7.04},{"equipe":"Liverpool","competition":"Premier League","goal":17,"shotsPerGame":21.5,"yellowCard":5,"redCard":1,"possession":66.9,"passSuccess":87.9,"aerialWonPerGame":19.5,"note":7.04},{"equipe":"Manchester City","competition":"Premier League","goal":17,"shotsPerGame":12.5,"yellowCard":9,"redCard":2,"possession":60.6,"passSuccess":90.4,"aerialWonPerGame":7.5,"note":7.03},{"equipe":"VfB Stuttgart","competition":"Bundesliga","goal":22,"shotsPerGame":18.6,"yellowCard":9,"redCard":0,"possession":59.3,"passSuccess":87.3,"aerialWonPerGame":14.7,"note":7.01},{"equipe":"Paris Saint-Germain","competition":"Ligue 1","goal":20,"shotsPerGame":15.6,"yellowCard":5,"redCard":0,"possession":70.8,"passSuccess":91.0,"aerialWonPerGame":6.4,"note":7.01},{"equipe":"Real Madrid","competition":"LaLiga","goal":17,"shotsPerGame":18.9,"yellowCard":13,"redCard":0,"possession":61.3,"passSuccess":89.8,"aerialWonPerGame":8.3,"note":6.98},{"equipe":"Newcastle","competition":"Premier League","goal":19,"shotsPerGame":15.5,"yellowCard":21,"redCard":0,"possession":54.5,"passSuccess":83.6,"aerialWonPerGame":13.5,"note":6.96},{"equipe":"RB Leipzig","competition":"Bundesliga","goal":21,"shotsPerGame":16.6,"yellowCard":11,"redCard":0,"possession":59.0,"passSuccess":86.7,"aerialWonPerGame":9.9,"note":6.91},{"equipe":"Barcelona","competition":"LaLiga","goal":15,"shotsPerGame":16,"yellowCard":16,"redCard":0,"possession":65.7,"passSuccess":89.1,"aerialWonPerGame":10,"note":6.89},{"equipe":"Inter","competition":"Serie A","goal":17,"shotsPerGame":17.7,"yellowCard":9,"redCard":0,"possession":52.0,"passSuccess":86.2,"aerialWonPerGame":13,"note":6.89},{"equipe":"Marseille","competition":"Ligue 1","goal":7,"shotsPerGame":15,"yellowCard":5,"redCard":0,"possession":52.0,"passSuccess":85.5,"aerialWonPerGame":10.4,"note":6.89},{"equipe":"Monaco","competition":"Ligue 1","goal":13,"shotsPerGame":13.2,"yellowCard":14,"redCard":0,"possession":55.4,"passSuccess":83.1,"aerialWonPerGame":11.5,"note":6.87},{"equipe":"Atletico Madrid","competition":"LaLiga","goal":17,"shotsPerGame":16,"yellowCard":11,"redCard":0,"possession":53.4,"passSuccess":85.8,"aerialWonPerGame":13.1,"note":6.84},{"equipe":"Roma","competition":"Serie A","goal":18,"shotsPerGame":14.1,"yellowCard":11,"redCard":0,"possession":54.3,"passSuccess":84.4,"note":6.84},{"equipe":"Lille","competition":"Ligue 1","goal":8,"shotsPerGame":12.3,"yellowCard":9,"redCard":1,"possession":56.8,"passSuccess":83.4,"aerialWonPerGame":13.2,"note":6.83},{"equipe":"Real Betis","competition":"LaLiga","goal":10,"shotsPerGame":15.3,"yellowCard":14,"redCard":0,"possession":53.0,"passSuccess":86.0,"aerialWonPerGame":12.3,"note":6.82},{"equipe":"Arsenal","competition":"Premier League","goal":20,"shotsPerGame":15.5,"yellowCard":10,"redCard":1,"possession":61.0,"passSuccess":88.3,"aerialWonPerGame":12.6,"note":6.81},{"equipe":"Athletic Bilbao","competition":"LaLiga","goal":22,"shotsPerGame":14.3,"yellowCard":21,"redCard":1,"possession":53.5,"passSuccess":80.6,"aerialWonPerGame":14.3,"note":6.79}
+  ]; 
+  const teamTableAway = 
+  [
+    {"equipe":"Bayern Munich","competition":"Bundesliga","goal":16,"shotsPerGame":18.2,"yellowCard":13,"redCard":0,"possession":63.9,"passSuccess":88.8,"aerialWonPerGame":12.5,"note":7.12},{"equipe":"Paris Saint-Germain","competition":"Ligue 1","goal":14,"shotsPerGame":17.8,"yellowCard":12,"redCard":0,"possession":64.9,"passSuccess":89.9,"aerialWonPerGame":7.7,"note":7.07},{"equipe":"Bayer Leverkusen","competition":"Bundesliga","goal":16,"shotsPerGame":13.2,"yellowCard":15,"redCard":0,"possession":55.7,"passSuccess":87.5,"aerialWonPerGame":7.5,"note":6.91},{"equipe":"Inter","competition":"Serie A","goal":13,"shotsPerGame":14.7,"yellowCard":8,"redCard":0,"possession":59.8,"passSuccess":86.6,"aerialWonPerGame":17.8,"note":6.89},{"equipe":"Manchester City","competition":"Premier League","goal":16,"shotsPerGame":19.9,"yellowCard":14,"redCard":0,"possession":63.8,"passSuccess":90.1,"aerialWonPerGame":8.3,"note":6.89},{"equipe":"Real Madrid","competition":"LaLiga","goal":16,"shotsPerGame":15.5,"yellowCard":15,"redCard":1,"possession":55.6,"passSuccess":90.3,"aerialWonPerGame":8.0,"note":6.88},{"equipe":"Napoli","competition":"Serie A","goal":16,"shotsPerGame":16.0,"yellowCard":17,"redCard":0,"possession":57.2,"passSuccess":85.7,"aerialWonPerGame":11.7,"note":6.86},{"equipe":"Tottenham","competition":"Premier League","goal":15,"shotsPerGame":14.3,"yellowCard":19,"redCard":1,"possession":62.1,"passSuccess":88.2,"aerialWonPerGame":9.6,"note":6.84},{"equipe":"Atletico Madrid","competition":"LaLiga","goal":13,"shotsPerGame":10.5,"yellowCard":14,"redCard":1,"possession":52.0,"passSuccess":83.5,"aerialWonPerGame":12.2,"note":6.83},{"equipe":"Juventus","competition":"Serie A","goal":11,"shotsPerGame":11.9,"yellowCard":19,"redCard":0,"possession":45.9,"passSuccess":83.3,"aerialWonPerGame":14.0,"note":6.78},{"equipe":"Hoffenheim","competition":"Bundesliga","goal":16,"shotsPerGame":12.6,"yellowCard":21,"redCard":0,"possession":49.1,"passSuccess":78.9,"aerialWonPerGame":16.7,"note":6.78},{"equipe":"Arsenal","competition":"Premier League","goal":9,"shotsPerGame":14.0,"yellowCard":8,"redCard":1,"possession":60.5,"passSuccess":85.9,"aerialWonPerGame":13.5,"note":6.75},{"equipe":"Girona","competition":"LaLiga","goal":16,"shotsPerGame":13.4,"yellowCard":19,"redCard":0,"possession":54.8,"passSuccess":85.6,"aerialWonPerGame":13.0,"note":6.75},{"equipe":"Barcelona","competition":"LaLiga","goal":12,"shotsPerGame":14.7,"yellowCard":17,"redCard":1,"possession":67.8,"passSuccess":89.2,"aerialWonPerGame":14.3,"note":6.74},{"equipe":"Crystal Palace","competition":"Premier League","goal":7,"shotsPerGame":12.9,"yellowCard":14,"redCard":0,"possession":42.0,"passSuccess":78.0,"aerialWonPerGame":16.4,"note":6.74},{"equipe":"Everton","competition":"Premier League","goal":10,"shotsPerGame":11.3,"yellowCard":14,"redCard":1,"possession":37.9,"passSuccess":73.4,"aerialWonPerGame":19.9,"note":6.73},{"equipe":"VfB Stuttgart","competition":"Bundesliga","goal":11,"shotsPerGame":13.3,"yellowCard":8,"redCard":0,"possession":55.9,"passSuccess":84.2,"aerialWonPerGame":15.7,"note":6.72},{"equipe":"Chelsea","competition":"Premier League","goal":12,"shotsPerGame":12.5,"yellowCard":25,"redCard":1,"possession":59.0,"passSuccess":87.8,"aerialWonPerGame":10.0,"note":6.71},{"equipe":"Manchester United","competition":"Premier League","goal":8,"shotsPerGame":12.3,"yellowCard":13,"redCard":0,"possession":47.7,"passSuccess":79.9,"aerialWonPerGame":14.6,"note":6.70},{"equipe":"Monaco","competition":"Ligue 1","goal":14,"shotsPerGame":16.0,"yellowCard":17,"redCard":0,"possession":54.9,"passSuccess":83.6,"aerialWonPerGame":11.0,"note":6.70}
+  ]; 
+  
   useEffect(() => {
-    // Simulating data fetching with a delay
     const fetchData = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulating a 1-second delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
       setDataLoaded(true);
     };
-
     fetchData();
   }, []);
+
+  const [boutonActif, setBoutonActif] = useState<number | null>(1);
+  const handleClick = (bouton: number) => {
+    // Ajouter une pause de 100 millisecondes avant de mettre à jour l'état
+    setTimeout(() => {
+      setBoutonActif(bouton);
+    }, 200);
+  };
   return (
-    <div id="container">
-      <h2>Football Team Stats</h2>
-      <table id="teamStatsTable">
-        <thead>
-              <tr>
-                  <th>Team</th>
-                  <th>Apps</th>
-                  <th>Goal</th>
-                  <th>Shots Per Game</th>
-                  <th>Yellow Cards</th>
-                  <th>Red Cards</th>
-                  <th>Possession</th>
-                  <th>Pass Success</th>
-                  <th>Aerials Won Per Game</th>
-              </tr>
-          </thead>
-          <tbody>
-          {teamTableStats.map((team, index) => (
-              <tr key={index}>
-                <td>{team.name}</td>
-                <td>{team.apps}</td>
-                <td>{team.goal}</td>
-                <td>{team.shotsPerGame}</td>
-                <td>{team.yellowCard}</td>
-                <td>{team.redCard}</td>
-                <td>{(team.possession * 100).toFixed(2)}%</td>
-                <td>{(team.passSuccess * 100).toFixed(2)}%</td>
-                <td>{team.aerialWonPerGame}</td>
-              </tr>
-            ))}
-          </tbody>
-      </table>
+    <div className="content">
+      <div id="container">
+        <h2>Football Team Stats</h2>
+        <nav className='_bar'>
+          <div className="_links">
+            <ul>
+              <li className={boutonActif === 1 ? 'active' : ''} onClick={() => handleClick(1)}><a>General</a></li>
+              <li className={boutonActif === 2 ? 'active' : ''} onClick={() => handleClick(2)}><a>Home</a></li>
+              <li className={boutonActif === 3 ? 'active' : ''} onClick={() => handleClick(3)}><a>Away</a></li>
+            </ul>
+          </div>
+        </nav>
+        {/* GENERAL STATS */}
+        { boutonActif === 1 &&(
+
+        <table id="teamStatsTable" className="">
+          <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Competition</th>
+                    <th>Goal</th>
+                    <th>Shots Per Game</th>
+                    <th>Yellow Cards</th>
+                    <th>Red Cards</th>
+                    <th>Possession</th>
+                    <th>Pass Success</th>
+                    <th>Aerials Won Per Game</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+            {teamTableGeneral.map((team, index) => (
+                <tr key={index}>
+                  <td>{team.equipe}</td>
+                  <td className='centre'>{team.competition}</td>
+                  <td className='centre'>{team.goal}</td>
+                  <td>{team.shotsPerGame}</td>
+                  <td className='centre'><p className='yellow'>{team.yellowCard}</p></td>
+                  <td className='centre'><p className='red'>{team.redCard}</p></td>
+                  <td className='centre'>{team.possession}%</td>
+                  <td className='centre'>{team.passSuccess}%</td>
+                  <td>{team.aerialWonPerGame}</td>
+                  <td>{team.note}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+        )}
+
+        {/* HOME STATS */}
+        { boutonActif === 2 &&(
+
+        <table id="teamStatsTable" className="">
+          <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Competition</th>
+                    <th>Goal</th>
+                    <th>Shots Per Game</th>
+                    <th>Yellow Cards</th>
+                    <th>Red Cards</th>
+                    <th>Possession</th>
+                    <th>Pass Success</th>
+                    <th>Aerials Won Per Game</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+            {teamTableHome.map((team, index) => (
+                <tr key={index}>
+                  <td>{team.equipe}</td>
+                  <td className='centre'>{team.competition}</td>
+                  <td className='centre'>{team.goal}</td>
+                  <td>{team.shotsPerGame}</td>
+                  <td className='centre'><p className='yellow'>{team.yellowCard}</p></td>
+                  <td className='centre'><p className='red'>{team.redCard}</p></td>
+                  <td className='centre'>{team.possession}%</td>
+                  <td className='centre'>{team.passSuccess}%</td>
+                  <td>{team.aerialWonPerGame}</td>
+                  <td>{team.note}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+        )}
+
+        {/* AWAY STATS */}
+        { boutonActif === 3 &&(
+
+        <table id="teamStatsTable" className="">
+          <thead>
+                <tr>
+                    <th>Team</th>
+                    <th>Competition</th>
+                    <th>Goal</th>
+                    <th>Shots Per Game</th>
+                    <th>Yellow Cards</th>
+                    <th>Red Cards</th>
+                    <th>Possession</th>
+                    <th>Pass Success</th>
+                    <th>Aerials Won Per Game</th>
+                    <th>Note</th>
+                </tr>
+            </thead>
+            <tbody>
+            {teamTableAway.map((team, index) => (
+                <tr key={index}>
+                  <td>{team.equipe}</td>
+                  <td className='centre'>{team.competition}</td>
+                  <td className='centre'>{team.goal}</td>
+                  <td>{team.shotsPerGame}</td>
+                  <td className='centre'><p className='yellow'>{team.yellowCard}</p></td>
+                  <td className='centre'><p className='red'>{team.redCard}</p></td>
+                  <td className='centre'>{team.possession}%</td>
+                  <td className='centre'>{team.passSuccess}%</td>
+                  <td>{team.aerialWonPerGame}</td>
+                  <td>{team.note}</td>
+                </tr>
+              ))}
+            </tbody>
+        </table>
+        )}
+      </div>
     </div>
   );
 };
