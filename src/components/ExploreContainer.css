@@ -41,7 +41,7 @@ tbody tr, td, th {
   border: none;
 }
 tbody tr:nth-child(even){
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(135, 135, 135);
 }
 .centre{
   text-align: center;
