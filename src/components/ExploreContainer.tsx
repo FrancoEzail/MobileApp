@@ -4,7 +4,7 @@ interface ContainerProps { }
 
 // services/apiService.js
 
-export const fetchData = async (apiUrl) => {
+export const fetchData = async (apiUrl: string) => {
   try {
     const response = await fetch(apiUrl);
 
