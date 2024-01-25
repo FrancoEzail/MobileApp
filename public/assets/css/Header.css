@@ -1,0 +1,37 @@
+header{
+    width: 100%;
+}
+.header-box{
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 55px;
+    color: #fff;
+}
+
+.header-box .header-left{
+
+}
+
+.header-box .header-left span{
+
+}
+
+.header-box .header-left span i{
+    cursor: pointer;
+}
+
+.header-box .header-right{
+
+}
+
+.header-box .header-right span{
+    padding-left: 20px;
+}
+
+.header-box .header-right span i{
+    cursor: pointer;
+}
+
+.user-icon span {
+
+}
