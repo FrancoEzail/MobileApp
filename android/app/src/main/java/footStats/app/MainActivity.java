@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package footStats.app;
 
 import com.getcapacitor.BridgeActivity;
 

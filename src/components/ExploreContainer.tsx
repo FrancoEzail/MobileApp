@@ -21,7 +21,7 @@ export const fetchData = async (apiUrl: string) => {
 };
 
 
-const ExploreContainer: React.FC<ContainerProps> = () => {
+  const ExploreContainer: React.FC<ContainerProps> = () => {
   const [statsDataGeneral, setStatsDataGeneral] = useState<any[]>([]);
   const [statsDataDomicile, setStatsDataDomicile] = useState<any[]>([]);
   const [statsDataExterieur, setStatsDataExterieur] = useState<any[]>([]);
