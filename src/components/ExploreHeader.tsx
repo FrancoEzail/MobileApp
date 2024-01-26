@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {IonRouterLink } from '@ionic/react';
 interface HeaderProps {}
 const ExploreHeader: React.FC<HeaderProps> = () => {
     const [show, setShow] = useState(false);
@@ -21,7 +22,9 @@ const ExploreHeader: React.FC<HeaderProps> = () => {
                 </div>
                 <div className="header-right">
                     <span><i className="fas fa-search"></i></span>
-                    <span><i className="fas fa-user"></i></span>
+                    <IonRouterLink href='/profil' className="fotsy">
+                        <span><i className="fas fa-user"></i></span>
+                    </IonRouterLink>
                 </div>
             </nav>
         </header>

@@ -1,6 +1,5 @@
 import data_img from '../data_img';
 import {IonRouterLink } from '@ionic/react';
-import { useHistory } from 'react-router-dom';
 const Comp_Welcome: React.FC = () => {
     return (
         <div className="welcome">
@@ -11,7 +10,9 @@ const Comp_Welcome: React.FC = () => {
             </div>
             <div className="welc-group-btn">
                 <div className="home-btn">
-                    <a href="">Home <span><i className="fas fa-home"></i></span></a>
+                <IonRouterLink href='/accueil'>
+                    <a>Home<span><i className="fas fa-home"></i></span></a>
+                </IonRouterLink>
                 </div>
                 <div className="sign-btn">
                 <IonRouterLink href='/accueil'>
