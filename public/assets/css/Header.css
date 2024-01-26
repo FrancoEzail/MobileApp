@@ -35,3 +35,57 @@ header{
 .user-icon span {
 
 }
+
+header .burger_menu{
+    position:absolute;
+    display: none;
+    top: 25px;
+    left: 92%;
+}
+@media only screen and (max-width: 1206px){
+    header .nav_bar{
+        margin: 0;
+        border-bottom: 0;
+    }
+    header .nav_bar .burger_menu {
+        display: block;
+    }
+    .nav_links{
+        position: absolute;
+        background-color: rgba(0, 0, 0, 0.833);
+        /* backdrop-filter: blur(50px); */
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 1.5s ease;
+    }
+    .nav_links.mobile-menu {
+        margin-left: 0;
+    }
+    header .nav_bar .nav_links ul{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+    header .nav_bar .nav_links ul li{
+        margin: 20px 0;
+    }
+    header .nav_bar .nav_links ul li a{
+        font-size: 20px;
+    }
+
+    header .nav_bar a{
+        color: #fff;
+    }
+}
+@media only screen and (max-width: 650px){
+    header .nav_bar .burger_menu{
+        left: 80%;
+    
+    }
+}
