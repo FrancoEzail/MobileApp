@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Unbounded";
+    src: url('../fonts/Unbounded-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Unbounded2";
+    src: url('../fonts/Unbounded-Bold.woff') format('woff');
+}
 header{
     width: 100%;
 }
@@ -24,6 +33,7 @@ header .nav_bar .nav_links ul{
 header .nav_bar .nav_links ul li{
     margin: 0 20px;
     font-size: 14px;
+    font-family: 'Unbounded';
 }
 header .nav_bar .burger_menu{
     /* position:absolute; */

@@ -144,14 +144,13 @@ const Comp_discu: React.FC = () => {
                 }  
                 <p className='nom-profil'>Jean</p>
             </div>
-            
             <div className='discu-links'>
                 {
                     data_img.map((p2, index) => (
                         <img src={p2.p2} alt="" className='discu-profil-img'/>            
                     ))
                 }  
-                <p className='nom-profil'>Jean</p>
+                <p className='nom-profil'>Franco</p>
             </div>
             <div className='discu-links'>
                 {
@@ -159,7 +158,7 @@ const Comp_discu: React.FC = () => {
                         <img src={p3.p3} alt="" className='discu-profil-img'/>            
                     ))
                 }  
-                <p className='nom-profil'>Jean</p>
+                <p className='nom-profil'>Mini</p>
             </div>
             <div className='discu-links'>
                {
@@ -167,7 +166,7 @@ const Comp_discu: React.FC = () => {
                         <img src={p4.p4} alt="" className='discu-profil-img'/>            
                     ))
                 }  
-                <p className='nom-profil'>Jean</p>
+                <p className='nom-profil'>Toky</p>
             </div>
             <div className='discu-links'>
                 {
@@ -175,35 +174,53 @@ const Comp_discu: React.FC = () => {
                         <img src={profil.profil} alt="" className='discu-profil-img'/>            
                     ))
                 }  
-                <p className='nom-profil'>Jean</p>
+                <p className='nom-profil'>Rason</p>
+            </div>
+            <div className='discu-links'>
+                {
+                    data_img.map((p2, index) => (
+                        <img src={p2.p2} alt="" className='discu-profil-img'/>            
+                    ))
+                }  
+                <p className='nom-profil'>Joh</p>
+            </div>
+            <div className='discu-links'>
+                {
+                    data_img.map((p3, index) => (
+                        <img src={p3.p3} alt="" className='discu-profil-img'/>            
+                    ))
+                }  
+                <p className='nom-profil'>Nary</p>
             </div>
         </div>
         <div className='bloc-discu'>
-            <div className='mess-receive'>
-                {
-                    data_img.map((p2, index) => (
-                        <img src={p2.p2} alt="" className='discu-profil-img'/>            
-                    ))
-                }  
-                <div className='mess-p'>
-                    <p>Kez!!</p>
+            <div className='bloc-message'>
+                <div className='mess-receive'>
+                    {
+                        data_img.map((p2, index) => (
+                            <img src={p2.p2} alt="" className='discu-profil-img'/>            
+                        ))
+                    }  
+                    <div className='mess-p'>
+                        <p>Kez!!</p>
+                    </div>
+                    <div className='time-p'>
+                        <p>8:00</p>
+                    </div>
                 </div>
-                <div className='time-p'>
-                    <p>8:00</p>
+                <div className='mess-send'>
+                    <div className='time-p'>
+                        <p>8:00</p>
+                    </div>
+                    <div className='mess-p2'>
+                        <p>Kez!!</p>
+                    </div>
+                    {
+                        data_img.map((p2, index) => (
+                            <img src={p2.p2} alt="" className='discu-profil-img'/>            
+                        ))
+                    }  
                 </div>
-            </div>
-            <div className='mess-send'>
-                <div className='time-p'>
-                    <p>8:00</p>
-                </div>
-                <div className='mess-p2'>
-                    <p>Kez!!</p>
-                </div>
-                {
-                    data_img.map((p2, index) => (
-                        <img src={p2.p2} alt="" className='discu-profil-img'/>            
-                    ))
-                }  
             </div>
             <div className='input-message'>
                 <input type="text" placeholder='Votre message..' />

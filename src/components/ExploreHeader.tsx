@@ -14,10 +14,10 @@ const ExploreHeader: React.FC<HeaderProps> = () => {
                 </div>
                 <div className={`nav_links ${show ? "mobile-menu" : "nav_links"}`}>
                     <ul>                       
-                        <li><a href="#">Live</a></li>
-                        <li><a href="#">Statistics</a></li>
-                        <li><a href="#">Pre-match</a></li>
-                        <li><a href="#">Key info</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Parcelle</a></li>
+                        <li><a href="#">Profil</a></li>
+                        <li><a href="#">Log out</a></li>
                     </ul>
                 </div>
                 <div className="header-right">

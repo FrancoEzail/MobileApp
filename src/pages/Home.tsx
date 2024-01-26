@@ -5,7 +5,6 @@ const Home: React.FC = () => {
     return (
         <>
         <ExploreHeader />
-        <div id="container">
             <div className="container-welcome">
                 <Comp_Welcome></Comp_Welcome>
                 <div className="right-img">
@@ -15,13 +14,12 @@ const Home: React.FC = () => {
                         ))
                     }   
                 </div>
+                <div className="card-list">
+                    <Comp_Card_Shop></Comp_Card_Shop>
+                    <Comp_Card_Shop></Comp_Card_Shop>
+                    <Comp_Card_Shop></Comp_Card_Shop>
+                </div>
             </div>
-            <div className="card-list">
-                <Comp_Card_Shop></Comp_Card_Shop>
-                <Comp_Card_Shop></Comp_Card_Shop>
-                <Comp_Card_Shop></Comp_Card_Shop>
-            </div>
-        </div>
         </>
     );
 };
