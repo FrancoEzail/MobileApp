@@ -2,11 +2,6 @@ import data_img from '../data_img';
 import {IonRouterLink } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 const Comp_Welcome: React.FC = () => {
-    const history = useHistory();
-    const navigateToMainAccueil = () => {
-        history.push('/mainAccueil');
-    };
-
     return (
         <div className="welcome">
             <div className="grand-title">
@@ -19,7 +14,7 @@ const Comp_Welcome: React.FC = () => {
                     <a href="">Home <span><i className="fas fa-home"></i></span></a>
                 </div>
                 <div className="sign-btn">
-                <IonRouterLink onClick={navigateToMainAccueil}>
+                <IonRouterLink href='/accueil'>
                     <a>Sign in</a><span><i className="fas fa-arrow-right"></i></span>
                 </IonRouterLink>
                 </div>

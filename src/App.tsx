@@ -29,16 +29,8 @@ const App: React.FC = () => (
           <Route exact path="/">
             <Redirect to="/home" />
           </Route>
-        </IonRouterOutlet>
-      </IonReactRouter>
-  </div>
-);
-
-const AppAccueil: React.FC = () => (
-  <div className='Accueil'>
-      <IonReactRouter>
-        <IonRouterOutlet>
-        <Route exact path="/accueil">
+        
+          <Route exact path="/accueil">
             <Accueil />
           </Route>
           <Route exact path="/">
@@ -49,4 +41,4 @@ const AppAccueil: React.FC = () => (
   </div>
 );
 
-export {App, AppAccueil};
+export default App;
