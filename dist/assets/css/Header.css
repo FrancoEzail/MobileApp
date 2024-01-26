@@ -4,7 +4,7 @@ header{
 .header-box{
     display: flex;
     justify-content: space-between;
-    margin: 20px 55px;
+    margin: 20px;
     color: #fff;
 }
 

@@ -17,13 +17,21 @@ body {
    
 }
 
-.App{
+/* .App{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     flex-wrap: wrap;
-}
+} */
+
+/* .Accueil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+} */
 
 @font-face {
     font-family: "Poppins";
