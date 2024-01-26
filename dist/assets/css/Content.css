@@ -1,0 +1,776 @@
+@font-face {
+    font-family: "Unbounded";
+    src: url('../fonts/Unbounded-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Unbounded2";
+    src: url('../fonts/Unbounded-Bold.woff') format('woff');
+}
+
+.left-section {
+
+}
+
+.center-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.right-section {
+
+}
+
+
+#container {
+    overflow-y: scroll;
+}
+
+.container-welcome {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+    align-items: center;
+}
+
+.right-img {}
+
+.right-img img {
+    width: 450px;
+}
+
+.welcome {}
+
+.grand-title {}
+
+.grand-title h1 {
+    font-size: 40px;
+    font-family: 'Unbounded';
+    color: #fff;
+}
+
+.grand-title h1 span {
+    color: #B0C09B;
+}
+
+.welc-group-btn {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home-btn span {}
+
+.home-btn a {
+    color: #fff;
+    font-weight: 600;
+}
+
+.home-btn span i {
+    padding: 0 5px;
+}
+
+.sign-btn {
+    margin: 20px 0;
+    border: solid 1px #fff;
+    border-radius: 50px;
+}
+
+.sign-btn a {
+    color: #fff;
+    padding: 0 25px 0 35px;
+    font-weight: 600;
+}
+
+.sign-btn span {}
+
+.sign-btn span i {
+    background: #fff;
+    margin: 5px;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #383838;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.card-list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 50px;
+}
+
+.card {
+    display: flex;
+    width: 290px;
+    justify-content: space-between;
+    background: #ffffff17;
+    border-radius: 20px;
+    padding: 10px 40px;
+    align-items: center;
+}
+
+.card-img {}
+
+.card-img img {
+    width: 100px;
+}
+
+.card-detail {}
+
+.card-detail h4 {
+    font-size: 18px;
+    color: #fff;
+    font-family: 'Unbounded';
+}
+
+.shop-btn a {
+    color: #fff;
+    border-bottom: solid 1px;
+    font-size: 12px;
+}
+
+/* ------------------------------------------------------- */
+/* ACCUEIL CSS */
+/* ------------------------------------------------------- */
+
+.container-accueil {
+    display: flex;
+    width: 92%;
+    justify-content: space-evenly;
+}
+
+.sub-title {
+    display: flex;
+    align-items: flex-start;
+}
+
+.circle {
+    color: #fff;
+    padding-right: 10px;
+}
+
+.circle span {
+    font-size: 30px;
+}
+
+.text-sub-title h1 {
+    font-family: 'Unbounded';
+    color: #fff;
+
+}
+
+.filtre-box {
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+    backdrop-filter: blur(50px);
+    border: solid 1px #fff;
+    width: 340px;
+    height: auto;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+
+.filtre-box2 {
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(50px);
+    border: solid 1px #fff;
+    width: 430px;
+    height: 245px;
+    border-radius: 30px;
+    box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+}
+
+._bar {
+
+    margin-top: 40px;
+    box-sizing: border-box;
+
+}
+
+._bar ._links {}
+
+._bar ._links ul {
+    display: flex;
+    align-items: center;
+}
+
+._bar ._links ul li {
+    margin: 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+._bar ._links ul li a {
+    border: solid 1px #fff;
+    color: #fff;
+    border-radius: 50px;
+    padding: 15px 25px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+._bar ._links ul li.active a {
+    background: #fff;
+    color: #191919;
+}
+
+.table-culture {
+    margin: 50px 0;
+    padding-bottom: 20px;
+    background-color: #383838;
+    width: 550px;
+    height: auto;
+    border-radius: 30px;
+}
+
+.right-arrow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-arrow-btn span i {
+    background:#191919;
+    border: solid 2px #191919;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #fff;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.right-arrow span i {
+    background: #fff;
+    margin: 10px;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #383838;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.tableau_style {
+    padding: 10px 0;
+}
+
+.title_bar {
+
+}
+
+.title_links {
+}
+
+.title_links ul{
+    display: flex;
+    align-items: center;
+}
+
+.title_links ul li{
+    margin: 0 -30px 0px 75px;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.limit-scroll {
+    overflow-y: scroll;
+    height: 210px;
+    scrollbar-width: thin; 
+    scrollbar-color: #fff rgba(255, 255, 255, 0.5);  
+    margin: 0 10px;
+    border-radius: 40px;
+}
+
+.limit-scroll::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.limit-scroll::-webkit-scrollbar-thumb {
+    background-color: #fff;  
+    border-radius: 10px;  
+}
+
+.limit-scroll::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;  
+}
+
+.list_bar {
+    margin: 10px;
+}
+
+.list_links {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 40px;
+    padding: 15px 0;
+}
+
+.list_links ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.list_links ul li{
+    margin: 0 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.list_links ul li span{
+    
+}
+
+.list_links ul li span i{
+    cursor: pointer;
+}
+
+.profil-box {
+    display: flex;
+    /* padding: 10px; */
+}
+
+.profil-img img{
+    width: 70px;
+    border-radius: 50px;
+}
+
+.profil-card {
+    display: flex;
+    background-color: #B0C09B;
+    width: 250px;
+    border-radius: 50px;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.nom-email {
+
+}
+
+.nom-email h5{
+    font-size: 20px;
+}
+
+.nom-email p{
+    font-size: 15px;
+}
+
+.ellipsis span i{
+
+}
+
+.card-form {
+    width: 320px;
+    height: 420px;
+    margin: 10px 0;
+    padding: 30px;
+    border-radius: 30px;
+    background: #fff;
+}
+
+.circle2 {
+    color: #191919;
+}
+
+.circle2 span {
+    font-size: 30px;
+}
+
+.sub-title-form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.form-group {
+}
+
+.form-input {
+
+}
+
+.form-input input {
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.07);
+    margin: 5px 0;
+    padding: 15px 20px;
+}
+
+.form-input input ::placeholder {
+    
+}
+
+.form-input select {
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.07);
+    margin: 5px 0;
+    padding: 15px 20px;
+}
+
+.sub-btn {
+    display: flex;
+    align-items: center;
+}
+
+.sub-btn input{
+    width: 100%;
+    border: solid 2px #191919;
+    border-radius: 50px;
+    padding: 15px 0;
+    margin: 5px 0;
+    background: transparent;
+    color: #191919;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 1.8s;
+}
+
+.sub-btn input:hover{
+    border: solid 2px transparent;
+    background: #191919;
+    border-radius: 10px;
+    transition: 1.8s;
+    cursor: pointer;
+    color: #fff;
+}
+
+.upload-photo{
+    margin: 5px 0;
+}
+
+.dropzone-style {
+
+    border: 2px dashed #ccc;
+    border-radius: 15px;
+    display: flex;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dropzone-style p {
+    font-size: 15px;
+    width: 55%;
+    color: #191919;
+    text-align: center;
+}
+
+.dropzone-style span i {
+    font-size: 60px;
+    color: #ccc;
+}
+
+.card-pub {
+    background: #383838;
+    width: 280px;
+    height: 370px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.card_pub-img img {
+    width: 245px;
+    padding: 15px 0;
+    cursor: pointer;
+}
+
+.descrit {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    color: #fff;
+}
+
+.left-descrit {
+
+}
+
+.left-descrit h5 {
+    font-size: 20px;
+    font-family: 'Unbounded';
+}
+
+.left-descrit span  {
+    display: flex;
+    align-items: center;
+}
+
+.left-descrit span i {
+    padding-right: 10px;
+}
+
+.right-descrit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.right-descrit h5 {
+    color: #B0C09B;
+    font-family: 'Poppins2';
+    font-size: 20px;
+}
+
+.right-descrit p {
+    
+}
+
+.sary {
+    margin-top: 10px;
+    background: #B0C09B;
+    height: 125px;
+    border-radius: 30px;
+}
+
+.sary img {
+    width: 180px;
+}
+/* ------------------------------------------------------- */
+/* PROFIL CSS */
+/* ------------------------------------------------------- */
+
+.container-profil {
+    display: flex;
+    width: 84%;
+    justify-content: space-evenly;
+}
+
+.discu-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: solid 1px #fff;
+    border-radius: 30px;
+    height: auto;
+    padding: 10px;
+    height: 500px;
+    max-width: 270px;
+    box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+}
+
+.discu-list {
+    overflow-x: scroll;
+    scrollbar-width: thin; 
+    scrollbar-color: transparent;  
+}
+
+.discu-list::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.discu-list::-webkit-scrollbar-thumb {
+    background-color: transparent;  
+    border-radius: 10px;  
+}
+
+.discu-list::-webkit-scrollbar-track {
+    background-color: transparent; 
+    border-radius: 10px;  
+}
+
+.discu-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.discu-list {
+    display: flex;
+}
+
+.discu-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 2px;
+}
+
+.discu-links p {
+    font-size: 12px;
+    color: #fff;
+}
+
+.discu-profil-img {
+    width: 50px;
+    border-radius: 50px;
+}
+
+.icon-btn {
+
+}
+
+.icon-btn span i{
+    background:#fff;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #B0C09B;
+    cursor: pointer;
+}
+
+.bloc-discu {
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    height: 330px;
+}
+
+.mess-receive {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 10px;
+}
+
+.mess-send {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 10px;
+}
+
+.mess-p p{
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50px;
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 12px;
+    height: auto;
+    width: auto;
+}
+
+.mess-p2 p{
+    background: #B0C09B;
+    border-radius: 50px;
+    padding: 15px 20px;
+    color: #000;
+    font-size: 12px;
+    height: auto;
+    width: auto;
+}
+
+.time-p p{
+    font-size: 10px;
+    color: #fff;
+    padding: 0 5px;
+}
+
+.input-message {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 78%;
+    left: 72.2%;
+    width: 17%;
+    z-index: 1;
+}
+
+.input-message input{
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px 0;
+    padding: 15px 20px;
+    backdrop-filter: blur(50px);
+}
+
+.table-title h3{
+    color: #fff;
+    padding: 0 20px;
+}
+
+.limit-scroll-1 {
+    overflow-y: scroll;
+    height: 130px;
+    scrollbar-width: thin; 
+    scrollbar-color: #fff rgba(255, 255, 255, 0.5);  
+    border-radius: 40px;
+    margin: 0 10px;
+}
+
+.limit-scroll-1::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.limit-scroll-1::-webkit-scrollbar-thumb {
+    background-color: #fff;  
+    border-radius: 10px;  
+}
+
+.limit-scroll-1::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;  
+}
+
+.limit-scroll-2 {
+    overflow-y: scroll;
+    height: 130px;
+    scrollbar-width: thin; 
+    scrollbar-color: #fff rgba(255, 255, 255, 0.5);  
+    border-radius: 40px;
+    margin: 0 10px;
+}
+
+.limit-scroll-2::-webkit-scrollbar {
+    width: 5px;  
+}
+
+.limit-scroll-2::-webkit-scrollbar-thumb {
+    background-color: #fff;  
+    border-radius: 10px;  
+}
+
+.limit-scroll-2::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 10px;  
+}
+
+.tableau_style{
+    border-collapse: collapse;
+    cursor: pointer;
+    border: none;
+
+}
+
+thead {
+
+}
+
+thead tr {
+    text-align: center;
+}
+
+thead tr {
+    text-align: center;
+    color: white;
+}
+
+th, td {
+    padding: 5px 30px;
+    text-align: center;
+    color: #fff;
+}
+
+tbody tr, td, th {
+    font-size: 15px;
+}
+
+tbody tr:nth-child(even){
+}
+
+tbody {
+
+}

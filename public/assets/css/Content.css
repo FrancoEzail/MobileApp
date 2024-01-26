@@ -24,22 +24,21 @@
 
 
 #container {
-    background-image: url(../img/backPhone.png);
-    background-size: cover;
-    
+    overflow-y: scroll;
+    height: 450px;
 }
 
 .container-welcome {
     display: flex;
-    justify-content: space-between;
-    margin: 0 50px;
-    align-items: center;
+    margin: 0 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .right-img {}
 
 .right-img img {
-    width: 450px;
+    width: 300px;
 }
 
 .welcome {}
@@ -47,7 +46,7 @@
 .grand-title {}
 
 .grand-title h1 {
-    font-size: 40px;
+    font-size: 30px;
     font-family: 'Unbounded';
     color: #fff;
 }
@@ -57,13 +56,14 @@
 }
 
 .welc-group-btn {
-    width: 80%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.home-btn span {}
+.home-btn {
+}
 
 .home-btn a {
     color: #fff;
@@ -82,7 +82,7 @@
 
 .sign-btn a {
     color: #fff;
-    padding: 0 25px 0 35px;
+    padding: 0 18px;
     font-weight: 600;
 }
 
@@ -100,8 +100,8 @@
 
 .card-list {
     display: flex;
-    justify-content: space-between;
-    margin: 0 50px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .card {
@@ -111,6 +111,7 @@
     background: #ffffff17;
     border-radius: 20px;
     padding: 10px 40px;
+    margin: 5px 0;
     align-items: center;
 }
 
@@ -140,8 +141,10 @@
 
 .container-accueil {
     display: flex;
-    width: 92%;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 600px;
+    justify-content: center;
 }
 
 .sub-title {
@@ -163,7 +166,6 @@
     color: #fff;
 
 }
-
 .filtre-box {
     padding-bottom: 20px;
     background-color: rgba(0, 0, 0, 0.1);
@@ -174,6 +176,11 @@
     height: auto;
     border-radius: 30px;
     margin: 10px 0;
+}
+.filtre-box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .filtre-box2 {
@@ -201,8 +208,8 @@
 }
 
 ._bar ._links ul li {
-    margin: 0 5px;
-    font-size: 14px;
+    margin: 0 2px;
+    font-size: 12px;
     font-weight: 600;
 }
 
@@ -224,7 +231,7 @@
     margin: 50px 0;
     padding-bottom: 20px;
     background-color: #383838;
-    width: 550px;
+    width: 350px;
     height: auto;
     border-radius: 30px;
 }
@@ -272,7 +279,7 @@
 }
 
 .title_links ul li{
-    margin: 0 -30px 0px 75px;
+    margin: 0 -30px 0px 48px;
     font-size: 14px;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.5);
@@ -475,16 +482,16 @@
 
 .card-pub {
     background: #383838;
-    width: 280px;
-    height: 370px;
+    width: 320px;
+    height: 400px;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .card_pub-img img {
-    width: 245px;
-    padding: 15px 0;
+    width: 275px;
+    padding: 20px 0;
     cursor: pointer;
 }
 

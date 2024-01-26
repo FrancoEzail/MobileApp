@@ -14,14 +14,24 @@ body {
     background-image: url(../img/backPhone.png);
     background-size: cover;
     background-repeat: no-repeat;
+   
 }
 
-.App{
+/* .App{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-}
+    flex-wrap: wrap;
+} */
+
+/* .Accueil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+} */
 
 @font-face {
     font-family: "Poppins";
