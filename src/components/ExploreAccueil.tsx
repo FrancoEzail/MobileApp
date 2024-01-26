@@ -3,11 +3,11 @@ import data_img from '../data_img';
 import { useDropzone } from 'react-dropzone';
 
 const UploadImage: React.FC = () =>  {
-    const [uploadedFile, setUploadedFile] = useState(null);
+    const [uploadedFile, setUploadedFile] = useState<File | null>(null);
 
-    const onDrop = useCallback((acceptedFiles) => {
-        const file = acceptedFiles[0];
-        setUploadedFile(file);
+    const onDrop = useCallback((acceptedFiles: File[]) => {
+      const file = acceptedFiles[0];
+      setUploadedFile(file);
     }, []);
 
     const { getRootProps, getInputProps } = useDropzone({ onDrop });
