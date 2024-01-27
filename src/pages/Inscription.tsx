@@ -1,6 +1,6 @@
-import { Comp_Login } from '../components/ExploreLogin';
+import { Comp_Inscrit } from '../components/ExploreLogin';
 import {IonRouterLink } from '@ionic/react';
-const Login: React.FC = () => {
+const Inscrit: React.FC = () => {
     return(
         <div className='container-login'>
             <div className='retour-btn'>
@@ -8,8 +8,8 @@ const Login: React.FC = () => {
                 <span><i className='fas fa-angle-left'></i></span>
             </IonRouterLink>
             </div>
-            <Comp_Login />
+            <Comp_Inscrit />
         </div>
     );
 };
-export default Login;
+export default Inscrit;

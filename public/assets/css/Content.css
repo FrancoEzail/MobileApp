@@ -906,6 +906,7 @@ tbody {
 .have-account p span a{
     color: #B0C09B;
     font-family: 'Poppins2';
+    padding: 0 10px;
 }
 
 .login-title {
@@ -925,7 +926,13 @@ tbody {
     font-size: 60px; 
     font-family: 'Poppins3';
     line-height: 60px;
-  }
+}
+
+  .form-group-log {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
 
 .form-input-log {
     margin: 0 15px;
@@ -949,6 +956,7 @@ tbody {
 
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 7px 15px;
 }
 
