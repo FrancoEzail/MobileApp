@@ -710,14 +710,19 @@
     border: none;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
-    margin: 5px 0;
     padding: 15px 20px;
     backdrop-filter: blur(50px);
+}
+
+.input-message input:focus{
+    color: #fff;
+    font-size: 15px;
 }
 
 .table-title h3{
     color: #fff;
     padding: 0 20px;
+    font-size: 16px;
 }
 
 .limit-scroll-1 {
@@ -853,13 +858,13 @@ tbody {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     background-color: rgba(0, 0, 0, 0.1);
     box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
     backdrop-filter: blur(50px);
     border: solid 1px #fff;
     width: 350px;
-    height: 650px;
+    height: 550px;
     border-radius: 45px;
     margin: 10px 0;
 }
@@ -910,22 +915,22 @@ tbody {
 }
 
 .login-title {
-    padding: 15px;
+    padding: 0 15px;
 }
 
 .fill-text { 
-    font-size: 60px; 
+    font-size: 55px; 
     font-family: 'Poppins3';
     color: #B0C09B;
-    line-height: 60px;
+    line-height: 50px;
 }
 
 .stroke-text {
     color: transparent; 
-    -webkit-text-stroke: 2px #B0C09B; 
-    font-size: 60px; 
+    -webkit-text-stroke: 1.5px #B0C09B; 
+    font-size: 55px; 
     font-family: 'Poppins3';
-    line-height: 60px;
+    line-height: 50px;
 }
 
   .form-group-log {
@@ -943,10 +948,15 @@ tbody {
     border: solid 1px #fff;
     width: 100%;
     background: transparent;
-    margin: 7px 0;
+    margin: 5px 0;
     padding: 25px;
 }
 
+.form-input-log input:focus {
+   color: #fff;
+   font-size: 17px;
+}
+ 
 .form-input-log input::placeholder {
     color: #fff;
     font-size: 17px;
@@ -957,14 +967,14 @@ tbody {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 7px 15px;
+    margin: 5px 15px;
 }
 
 .btn-log input {
     width: 100%;
     border: solid 1px #b0c09b;
     border-radius: 50px;
-    padding: 25px 53px;
+    padding: 20px 53px;
     background: transparent;
     font-size: 20px;
     font-family: 'Poppins2';

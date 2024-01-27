@@ -2,6 +2,7 @@ import React, { useState, useCallback  } from 'react';
 import data_img from '../data_img';
 import { useDropzone } from 'react-dropzone';
 import {IonRouterLink } from '@ionic/react';
+import { Comp_discu } from '../components/ExploreProfil';
 
 const UploadImage: React.FC = () =>  {
     const [uploadedFile, setUploadedFile] = useState<File | null>(null);

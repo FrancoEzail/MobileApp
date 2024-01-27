@@ -1,4 +1,5 @@
 import data_img from '../data_img';
+
 const Comp_parcelle_culture: React.FC = () => {
     return(
         <div className="filtre-box">
