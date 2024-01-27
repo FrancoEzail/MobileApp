@@ -843,7 +843,6 @@ tbody {
 
 .container-login {
     display: flex;
-    flex-wrap: wrap;
     overflow-y: scroll;
     height: 100%;
     justify-content: center;
@@ -860,7 +859,7 @@ tbody {
     backdrop-filter: blur(50px);
     border: solid 1px #fff;
     width: 350px;
-    height: 600px;
+    height: 650px;
     border-radius: 45px;
     margin: 10px 0;
 }
@@ -922,7 +921,7 @@ tbody {
 
 .stroke-text {
     color: transparent; 
-    -webkit-text-stroke: 1px #B0C09B; 
+    -webkit-text-stroke: 2px #B0C09B; 
     font-size: 60px; 
     font-family: 'Poppins3';
     line-height: 60px;
@@ -954,23 +953,25 @@ tbody {
 }
 
 .btn-log input {
-    border: none;
+    width: 100%;
+    border: solid 1px #b0c09b;
     border-radius: 50px;
     padding: 25px 53px;
-    background: #b0c09b;
+    background: transparent;
     font-size: 20px;
     font-family: 'Poppins2';
+    color: #b0c09b;
 }
 
 .icon-btn-log {
 }
 
 .icon-btn-log span i{
-    background: transparent;
-    border: solid 1px #fff;
+    background: #fff;
+    border: none;
     padding: 22px 24px;
     border-radius: 40px;
-    color: #fff;
+    color: #b0c09b;
     cursor: pointer;
     font-size: 30px;
 }
