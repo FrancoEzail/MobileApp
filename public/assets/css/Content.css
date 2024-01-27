@@ -7,6 +7,11 @@
     font-family: "Unbounded2";
     src: url('../fonts/Unbounded-Bold.woff') format('woff');
 }
+
+@font-face {
+    font-family: "Poppins3";
+    src: url('../fonts/Poppins-Black.woff') format('woff');
+}
 .fotsy {
     color: #fff;
 }
@@ -550,6 +555,7 @@
 .sary img {
     width: 180px;
 }
+
 /* ------------------------------------------------------- */
 /* PROFIL CSS */
 /* ------------------------------------------------------- */
@@ -818,4 +824,153 @@ tbody {
     .container-welcome{
         height: 590px;
     }
+}
+
+/* ------------------------------------------------------- */
+/* LOGIN CSS */
+/* ------------------------------------------------------- */
+.retour-btn {
+    display: flex;
+    justify-content: flex-start;
+    width: 80%;
+}
+
+.retour-btn span i{
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 0;
+}
+
+.container-login {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+    backdrop-filter: blur(50px);
+    border: solid 1px #fff;
+    width: 350px;
+    height: 600px;
+    border-radius: 45px;
+    margin: 10px 0;
+}
+
+.comp-log {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+.right-arrow-log {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.right-arrow-log-btn span i {
+    background:#191919;
+    border: solid 2px #191919;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #fff;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.right-arrow-log span i {
+    background: transparent;
+    margin: 10px;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #fff;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.have-account p {
+    text-align: center;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.have-account p span a{
+    color: #B0C09B;
+    font-family: 'Poppins2';
+}
+
+.login-title {
+    padding: 15px;
+}
+
+.fill-text { 
+    font-size: 60px; 
+    font-family: 'Poppins3';
+    color: #B0C09B;
+    line-height: 60px;
+}
+
+.stroke-text {
+    color: transparent; 
+    -webkit-text-stroke: 1px #B0C09B; 
+    font-size: 60px; 
+    font-family: 'Poppins3';
+    line-height: 60px;
+  }
+
+.form-input-log {
+    margin: 0 15px;
+}
+
+.form-input-log input {
+    border-radius: 50px;
+    border: solid 1px #fff;
+    width: 100%;
+    background: transparent;
+    margin: 7px 0;
+    padding: 25px;
+}
+
+.form-input-log input::placeholder {
+    color: #fff;
+    font-size: 17px;
+}
+
+.btn-log {
+
+    display: flex;
+    align-items: center;
+    margin: 7px 15px;
+}
+
+.btn-log input {
+    border: none;
+    border-radius: 50px;
+    padding: 25px 53px;
+    background: #b0c09b;
+    font-size: 20px;
+    font-family: 'Poppins2';
+}
+
+.icon-btn-log {
+}
+
+.icon-btn-log span i{
+    background: transparent;
+    border: solid 1px #fff;
+    padding: 22px 24px;
+    border-radius: 40px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 30px;
 }

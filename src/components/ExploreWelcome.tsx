@@ -15,7 +15,7 @@ const Comp_Welcome: React.FC = () => {
                 </IonRouterLink>
                 </div>
                 <div className="sign-btn">
-                <IonRouterLink href='/accueil'>
+                <IonRouterLink href='/login'>
                     <a>Sign in</a><span><i className="fas fa-arrow-right"></i></span>
                 </IonRouterLink>
                 </div>
