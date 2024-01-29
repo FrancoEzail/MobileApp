@@ -14,10 +14,16 @@ const ExploreHeader: React.FC<HeaderProps> = () => {
                 </div>
                 <div className={`nav_links ${show ? "mobile-menu" : "nav_links"}`}>
                     <ul>                       
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">Parcelle</a></li>
-                        <li><a href="#">Profil</a></li>
-                        <li><a href="#">Log out</a></li>
+                        <li><a href="">Home</a></li>
+                        <IonRouterLink href='/accueil'>
+                            <li><a>Parcelle</a></li>
+                        </IonRouterLink>
+                        <IonRouterLink href='/profil'>
+                            <li><a>Profil</a></li>
+                        </IonRouterLink>
+                        <IonRouterLink href='/login'>
+                            <li><a>Log out</a></li>
+                        </IonRouterLink>
                     </ul>
                 </div>
                 <div className="header-right">

@@ -835,9 +835,6 @@ tbody {
 /* LOGIN CSS */
 /* ------------------------------------------------------- */
 .retour-btn {
-    display: flex;
-    justify-content: flex-start;
-    width: 80%;
 }
 
 .retour-btn span i{
@@ -866,9 +863,13 @@ tbody {
     width: 350px;
     height: 550px;
     border-radius: 45px;
+}
+.head-log {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
     margin: 10px 0;
 }
-
 .comp-log {
     display: flex;
     flex-direction: column;
@@ -876,13 +877,12 @@ tbody {
     width: 100%;
     height: 100%;
 }
+
 .right-arrow-log {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
 }
 
-.right-arrow-log-btn span i {
+/* .right-arrow-log-btn span i {
     background:#191919;
     border: solid 2px #191919;
     padding: 14px 15px;
@@ -890,12 +890,10 @@ tbody {
     color: #fff;
     transform: rotate(315deg);
     cursor: pointer;
-}
+} */
 
 .right-arrow-log span i {
     background: transparent;
-    margin: 10px;
-    padding: 14px 15px;
     border-radius: 40px;
     color: #fff;
     transform: rotate(315deg);

@@ -2,12 +2,20 @@ import {IonRouterLink } from '@ionic/react';
 const Comp_Login: React.FC = () => { 
     return(
         <div className="login-card">
-            <div className='right-arrow-log'>
+            <div className='head-log'>
+                <div className='retour-btn'>
+                    <IonRouterLink href='/home'>
+                        <span><i className='fas fa-angle-left'></i></span>
+                    </IonRouterLink>
+                </div>
                 <div className='table-title'>
                     <h3>Veuillez-vous connectez</h3>
                 </div>
-                <span><i className="fas fa-arrow-right"></i></span>
+                <div className='right-arrow-log'>
+                    <span><i className="fas fa-arrow-right"></i></span>
+                </div>
             </div>
+
             <div className="comp-log">
                 <div className="have-account">
                     <p>Pas de compte? 
@@ -46,12 +54,19 @@ const Comp_Inscrit: React.FC = () => {
     return(
         <>
             <div className="login-card">
-                <div className='right-arrow-log'>
+            <div className='head-log'>
+                <div className='retour-btn'>
+                <IonRouterLink href='/home'>
+                    <span><i className='fas fa-angle-left'></i></span>
+                </IonRouterLink>
+                </div>
                     <div className='table-title'>
                         <h3>Veuillez-vous inscrire</h3>
                     </div>
+                <div className='right-arrow-log'>
                     <span><i className="fas fa-arrow-right"></i></span>
                 </div>
+            </div>
                 <div className="comp-log">
                     <div className="have-account">
                         <p>Deja inscrit? 
