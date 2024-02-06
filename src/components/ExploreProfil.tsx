@@ -1,6 +1,38 @@
 import data_img from '../data_img';
+import React, { useEffect, useState } from 'react';
 
+
+export const fetchData = async (apiUrl: string) => {
+    try {
+      const response = await fetch(apiUrl);
+  
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des données");
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Erreur de requête :", error);
+      throw error;
+    }
+  };
 const Comp_parcelle_culture: React.FC = () => {
+   
+    const [statsDataGeneral, setStatsDataGeneral] = useState<any[]>([]);
+
+  useEffect(() => {
+    const fetchAllData = async () => {
+      try {
+        const dataGeneral = await fetchData("https://farm-production.up.railway.app/user/all");      
+        setStatsDataGeneral(dataGeneral);
+      } catch (error) {
+        // Gérer l'erreur ici
+      }
+    };
+
+    fetchAllData();
+  }, []); 
     return(
         <div className="filtre-box">
             <div className='right-arrow'>
@@ -18,18 +50,12 @@ const Comp_parcelle_culture: React.FC = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Corn</td>
-                        <td>P1</td>
+                {statsDataGeneral.map((team, index) => (
+                    <tr key={index}>
+                        <td>{team.id}</td>
+                        <td>{team.nom}</td>
                     </tr>
-                    <tr>
-                        <td>Corn</td>
-                        <td>P1</td>
-                    </tr>
-                    <tr>
-                        <td>Corn</td>
-                        <td>P1</td>
-                    </tr>
+                ))}
                 </tbody>
             </table>
             </div>  

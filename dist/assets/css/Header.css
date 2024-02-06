@@ -1,59 +1,68 @@
+@font-face {
+    font-family: "Unbounded";
+    src: url('../fonts/Unbounded-Light.woff') format('woff');
+}
+
+@font-face {
+    font-family: "Unbounded2";
+    src: url('../fonts/Unbounded-Bold.woff') format('woff');
+}
 header{
     width: 100%;
 }
-.header-box{
-    display: flex;
-    justify-content: space-between;
-    margin: 20px;
+header .nav_bar .logo{
+}
+header .nav_bar{
+    display: none;
     color: #fff;
 }
-
-.header-box .header-left{
-
-}
-
-.header-box .header-left span{
-
-}
-
-.header-box .header-left span i{
+header .nav_bar a{
+    color: #ffffff;
+    text-transform: uppercase;
     cursor: pointer;
+    font-weight: 600;
 }
 
-.header-box .header-right{
-
+header .nav_bar .nav_links{
+   
 }
-
-.header-box .header-right span{
-    padding-left: 20px;
+header .nav_bar .nav_links ul{
+   display: flex;
+   align-items: center;
 }
-
-.header-box .header-right span i{
-    cursor: pointer;
+header .nav_bar .nav_links ul li{
+    margin: 0 20px;
+    font-size: 14px;
+    font-family: 'Unbounded';
 }
-
-.user-icon span {
-
-}
-
-header .burger_menu{
-    position:absolute;
+header .nav_bar .burger_menu{
+    /* position:absolute; */
     display: none;
-    top: 25px;
-    left: 92%;
+    /* top: 25px; */
+
+}
+.header-right span {
+    padding-left: 20px;
 }
 @media only screen and (max-width: 1206px){
     header .nav_bar{
         margin: 0;
         border-bottom: 0;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        padding: 25px 40px;
+        box-sizing: border-box;
+        align-items: center;
     }
     header .nav_bar .burger_menu {
         display: block;
+        z-index: 2;
     }
     .nav_links{
         position: absolute;
         background-color: rgba(0, 0, 0, 0.833);
-        /* backdrop-filter: blur(50px); */
+        backdrop-filter: blur(5px);
         width: 100%;
         height: 100vh;
         top: 0;
@@ -63,6 +72,7 @@ header .burger_menu{
         align-items: center;
         margin-left: -100%;
         transition: all 1.5s ease;
+        z-index: 1;
     }
     .nav_links.mobile-menu {
         margin-left: 0;
@@ -83,9 +93,9 @@ header .burger_menu{
         color: #fff;
     }
 }
-@media only screen and (max-width: 650px){
+/* @media only screen and (max-width: 650px){
     header .nav_bar .burger_menu{
         left: 80%;
     
     }
-}
+} */

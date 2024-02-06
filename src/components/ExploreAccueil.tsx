@@ -1,8 +1,57 @@
-import React, { useState, useCallback  } from 'react';
+import React, { useState, useCallback, useEffect  } from 'react';
 import data_img from '../data_img';
 import { useDropzone } from 'react-dropzone';
 import {IonRouterLink } from '@ionic/react';
-import { Comp_discu } from '../components/ExploreProfil';
+import { useParams } from 'react-router';
+import axios from 'axios';
+interface RouteParams {
+    userId : string;
+}
+interface User {
+    id: number;
+    email: string;
+    nom: string;
+  }
+  const Comp_profil: React.FC = () =>  {
+    const [users, setUsers] = useState<User | null>(null);
+    const { userId } = useParams<RouteParams>();
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get(`https://farm-production.up.railway.app/user/${userId}`);
+            setUsers(response.data);
+          } catch (error) {
+            console.error('Erreur lors de la récupération des données:', error);
+          }
+        };
+    
+        fetchData();
+      }, [userId]);
+    return(
+       <div className="profil-box">
+            <div className="profil-img">
+            <IonRouterLink href='/profil'>
+            {
+                data_img.map((profil, index) => (
+                    <img src={profil.profil} alt=""/>            
+                ))
+            }  
+            </IonRouterLink>
+            </div>
+            <div className="profil-card">
+                {users ? (
+                    <div className="nom-email">
+                        <h5>{users.nom}</h5>
+                        <p>{users.email}</p>
+                    </div>
+               ): null}
+                <div className='ellipsis'>
+                    <span><i className="fas fa-ellipsis-v"></i></span>
+                </div>
+            </div>
+        </div>
+    );  
+};
 
 const UploadImage: React.FC = () =>  {
     const [uploadedFile, setUploadedFile] = useState<File | null>(null);
@@ -144,30 +193,7 @@ const Comp_filtre: React.FC = () =>  {
     );
 };
 
-const Comp_profil: React.FC = () =>  {
-    return(
-       <div className="profil-box">
-            <div className="profil-img">
-            <IonRouterLink href='/profil'>
-            {
-                data_img.map((profil, index) => (
-                    <img src={profil.profil} alt=""/>            
-                ))
-            }  
-            </IonRouterLink>
-            </div>
-            <div className="profil-card">
-                <div className="nom-email">
-                    <h5>Jean Rakoto</h5>
-                    <p>jean@gmail.com</p>
-                </div>
-                <div className='ellipsis'>
-                    <span><i className="fas fa-ellipsis-v"></i></span>
-                </div>
-            </div>
-        </div>
-    );  
-};
+
 
 const Comp_formulaire: React.FC = () =>  {
     return(

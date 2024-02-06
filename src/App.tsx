@@ -6,6 +6,7 @@ import Accueil from './pages/Accueil';
 import Profil from './pages/Profil';
 import Login from './pages/Login';
 import Inscrit from './pages/Inscription';
+import { useParams } from 'react-router';
 /* Core CSS required for Ionic components to work properly */
 // import '@ionic/react/css/core.css';
 
@@ -21,7 +22,6 @@ import Inscrit from './pages/Inscription';
 // import './theme/variables.css';
 
 setupIonicReact();
-
 const App: React.FC = () => (
   <div className='App'>
       <IonReactRouter>
@@ -35,7 +35,7 @@ const App: React.FC = () => (
             <Home />
           </Route>
 
-          <Route exact path="/accueil">
+          <Route exact path="/accueil/:userId">
             <Accueil />
           </Route>
 

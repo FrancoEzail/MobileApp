@@ -1,5 +1,37 @@
 import {IonRouterLink } from '@ionic/react';
+import axios from 'axios';
+import React, { useState } from 'react';
+import { useHistory } from 'react-router';
 const Comp_Login: React.FC = () => { 
+    const history = useHistory();
+    const [email, setEmail] = useState(""); 
+    const [mdp, setMdp] = useState("");
+    const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    };
+
+    const handleMdpChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setMdp(e.target.value);
+    };
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await axios.get(`https://farm-production.up.railway.app/user/${email}/${mdp}`);
+            const userId = response.data.id;
+            const userNom = response.data.nom;
+            const userEmail = response.data.email;
+            
+            localStorage.setItem('userId', userId);
+            localStorage.setItem('userNom', userNom);
+            localStorage.setItem('userEmail', userEmail);
+            
+            history.push(`/accueil/${userId}`);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+
     return(
         <div className="login-card">
             <div className='head-log'>
@@ -30,20 +62,20 @@ const Comp_Login: React.FC = () => {
                     <h1 className="stroke-text">moderne</h1>
                 </div>
                 <div className="form-group-log">
-                    <div className="form-input-log">
-                        <input type="email" name="" id="" placeholder="Entrer votre Email"/>
-                    </div>
-                    <div className="form-input-log">
-                        <input type="password" name="" id="" placeholder="Entrer votre Mot de passe"/>
-                    </div>
-                    <div className='btn-log'>
-                        <div className='icon-btn-log'>
-                            <span><i className='fas fa-angle-double-right'></i></span>
+                    <form onSubmit={handleSubmit}>
+                        <div className="form-input-log">
+                            <input type="email" name="email" id="" placeholder="Entrer votre Email" onChange={handleEmailChange}/>
                         </div>
-                        <IonRouterLink href='/accueil'>
+                        <div className="form-input-log">
+                            <input type="password" name="mdp" id="" placeholder="Entrer votre Mot de passe" onChange={handleMdpChange}/>
+                        </div>
+                        <div className='btn-log'>
+                            <div className='icon-btn-log'>
+                                <span><i className='fas fa-angle-double-right'></i></span>
+                            </div>
                             <input type="submit" value="Se connecter"/>
-                        </IonRouterLink>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

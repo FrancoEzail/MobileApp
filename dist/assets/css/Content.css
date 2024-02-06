@@ -8,6 +8,14 @@
     src: url('../fonts/Unbounded-Bold.woff') format('woff');
 }
 
+@font-face {
+    font-family: "Poppins3";
+    src: url('../fonts/Poppins-Black.woff') format('woff');
+}
+.fotsy {
+    color: #fff;
+}
+
 .left-section {
 
 }
@@ -24,14 +32,13 @@
 
 
 #container {
-    overflow-y: scroll;
-    height: 450px;
 }
 
 .container-welcome {
     display: flex;
-    margin: 0 10px;
     flex-wrap: wrap;
+    overflow-y: scroll;
+    height: 760px;
     justify-content: center;
 }
 
@@ -47,7 +54,7 @@
 
 .grand-title h1 {
     font-size: 30px;
-    font-family: 'Unbounded';
+    font-family: 'Unbounded2';
     color: #fff;
 }
 
@@ -126,7 +133,7 @@
 .card-detail h4 {
     font-size: 18px;
     color: #fff;
-    font-family: 'Unbounded';
+    font-family: 'Unbounded2';
 }
 
 .shop-btn a {
@@ -143,7 +150,7 @@
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
-    height: 600px;
+    height: 780px;
     justify-content: center;
 }
 
@@ -162,7 +169,7 @@
 }
 
 .text-sub-title h1 {
-    font-family: 'Unbounded';
+    font-family: 'Unbounded2';
     color: #fff;
 
 }
@@ -172,7 +179,7 @@
     box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
     backdrop-filter: blur(50px);
     border: solid 1px #fff;
-    width: 340px;
+    width: 350px;
     height: auto;
     border-radius: 30px;
     margin: 10px 0;
@@ -187,10 +194,11 @@
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(50px);
     border: solid 1px #fff;
-    width: 430px;
+    width: 350px;
     height: 245px;
     border-radius: 30px;
     box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+    margin: 5px 0px 10px 
 }
 
 ._bar {
@@ -359,7 +367,7 @@
 }
 
 .nom-email {
-
+    color: #000;
 }
 
 .nom-email h5{
@@ -371,11 +379,11 @@
 }
 
 .ellipsis span i{
-
+    color: #000;
 }
 
 .card-form {
-    width: 320px;
+    width: 350px;
     height: 420px;
     margin: 10px 0;
     padding: 30px;
@@ -424,6 +432,7 @@
     background: rgba(0, 0, 0, 0.07);
     margin: 5px 0;
     padding: 15px 20px;
+    color: #000;
 }
 
 .sub-btn {
@@ -482,7 +491,7 @@
 
 .card-pub {
     background: #383838;
-    width: 320px;
+    width: 350px;
     height: 400px;
     border-radius: 30px;
     display: flex;
@@ -490,8 +499,8 @@
     align-items: center;
 }
 .card_pub-img img {
-    width: 275px;
-    padding: 20px 0;
+    width: 305px;
+    padding: 20px 0 0 0;
     cursor: pointer;
 }
 
@@ -509,7 +518,7 @@
 
 .left-descrit h5 {
     font-size: 20px;
-    font-family: 'Unbounded';
+    font-family: 'Unbounded2';
 }
 
 .left-descrit span  {
@@ -547,14 +556,17 @@
 .sary img {
     width: 180px;
 }
+
 /* ------------------------------------------------------- */
 /* PROFIL CSS */
 /* ------------------------------------------------------- */
 
 .container-profil {
     display: flex;
-    width: 84%;
-    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    height: 760px;
 }
 
 .discu-card {
@@ -563,11 +575,12 @@
     justify-content: space-between;
     border: solid 1px #fff;
     border-radius: 30px;
-    height: auto;
+    border-radius: 30px;
     padding: 10px;
     height: 500px;
-    max-width: 270px;
+    width: 350px;
     box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+    margin: 10px 0;
 }
 
 .discu-list {
@@ -604,16 +617,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     margin: 0 2px;
 }
 
 .discu-links p {
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
+    font-weight: 600;
 }
 
 .discu-profil-img {
-    width: 50px;
+    width: 55px;
     border-radius: 50px;
 }
 
@@ -630,10 +645,17 @@
 }
 
 .bloc-discu {
+    display: flex;
     padding: 10px 0;
     background: rgba(255, 255, 255, 0.25);
     border-radius: 20px;
     height: 330px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.bloc-message {
+
 }
 
 .mess-receive {
@@ -679,11 +701,9 @@
 .input-message {
     display: flex;
     align-items: center;
-    position: absolute;
-    top: 78%;
-    left: 72.2%;
-    width: 17%;
-    z-index: 1;
+    width: 94%;
+    margin: 0 10px;
+    /* z-index: 1; */
 }
 
 .input-message input{
@@ -691,14 +711,19 @@
     border: none;
     width: 100%;
     background: rgba(0, 0, 0, 0.2);
-    margin: 5px 0;
     padding: 15px 20px;
     backdrop-filter: blur(50px);
+}
+
+.input-message input:focus{
+    color: #fff;
+    font-size: 15px;
 }
 
 .table-title h3{
     color: #fff;
     padding: 0 20px;
+    font-size: 16px;
 }
 
 .limit-scroll-1 {
@@ -768,7 +793,7 @@ thead tr {
 }
 
 th, td {
-    padding: 5px 30px;
+    padding: 5px 20px;
     text-align: center;
     color: #fff;
 }
@@ -782,4 +807,188 @@ tbody tr:nth-child(even){
 
 tbody {
 
+}
+
+@media only screen and (max-height: 800px){
+    .container-accueil{
+        height: 710px;
+    }
+    .container-profil{
+        height: 710px;
+    }
+    .container-welcome{
+        height: 710px;
+    }
+}
+@media only screen and (max-height: 750px){
+    .container-accueil{
+        height: 600px;
+    }
+    .container-profil{
+        height: 590px;
+    }
+    .container-welcome{
+        height: 590px;
+    }
+}
+
+/* ------------------------------------------------------- */
+/* LOGIN CSS */
+/* ------------------------------------------------------- */
+.retour-btn {
+}
+
+.retour-btn span i{
+    color: #fff;
+    font-size: 25px;
+    padding: 10px 0;
+}
+
+.container-login {
+    display: flex;
+    overflow-y: scroll;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: -5px 5px 10px 4px #00000078, 0px 0px 0px 0px #00000078;
+    backdrop-filter: blur(50px);
+    border: solid 1px #fff;
+    width: 350px;
+    height: 550px;
+    border-radius: 45px;
+}
+.head-log {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 10px 0;
+}
+.comp-log {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+}
+
+.right-arrow-log {
+    
+}
+
+/* .right-arrow-log-btn span i {
+    background:#191919;
+    border: solid 2px #191919;
+    padding: 14px 15px;
+    border-radius: 40px;
+    color: #fff;
+    transform: rotate(315deg);
+    cursor: pointer;
+} */
+
+.right-arrow-log span i {
+    background: transparent;
+    border-radius: 40px;
+    color: #fff;
+    transform: rotate(315deg);
+    cursor: pointer;
+}
+
+.have-account p {
+    text-align: center;
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.have-account p span a{
+    color: #B0C09B;
+    font-family: 'Poppins2';
+    padding: 0 10px;
+}
+
+.login-title {
+    padding: 0 15px;
+}
+
+.fill-text { 
+    font-size: 55px; 
+    font-family: 'Poppins3';
+    color: #B0C09B;
+    line-height: 50px;
+}
+
+.stroke-text {
+    color: transparent; 
+    -webkit-text-stroke: 1.5px #B0C09B; 
+    font-size: 55px; 
+    font-family: 'Poppins3';
+    line-height: 50px;
+}
+
+  .form-group-log {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form-input-log {
+    margin: 0 15px;
+}
+
+.form-input-log input {
+    border-radius: 50px;
+    border: solid 1px #fff;
+    width: 100%;
+    background: transparent;
+    margin: 5px 0;
+    padding: 25px;
+}
+
+.form-input-log input:focus {
+   color: #fff;
+   font-size: 17px;
+}
+ 
+.form-input-log input::placeholder {
+    color: #fff;
+    font-size: 17px;
+}
+
+.btn-log {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px 15px;
+}
+
+.btn-log input {
+    width: 100%;
+    border: solid 1px #b0c09b;
+    border-radius: 50px;
+    padding: 20px 53px;
+    background: transparent;
+    font-size: 20px;
+    font-family: 'Poppins2';
+    color: #b0c09b;
+}
+
+.icon-btn-log {
+}
+
+.icon-btn-log span i{
+    background: #fff;
+    border: none;
+    padding: 22px 24px;
+    border-radius: 40px;
+    color: #b0c09b;
+    cursor: pointer;
+    font-size: 30px;
 }

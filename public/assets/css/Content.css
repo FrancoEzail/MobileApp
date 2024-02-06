@@ -367,7 +367,7 @@
 }
 
 .nom-email {
-
+    color: #000;
 }
 
 .nom-email h5{
@@ -379,7 +379,7 @@
 }
 
 .ellipsis span i{
-
+    color: #000;
 }
 
 .card-form {
@@ -432,6 +432,7 @@
     background: rgba(0, 0, 0, 0.07);
     margin: 5px 0;
     padding: 15px 20px;
+    color: #000;
 }
 
 .sub-btn {
