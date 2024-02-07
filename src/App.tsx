@@ -39,7 +39,7 @@ const App: React.FC = () => (
             <Accueil />
           </Route>
 
-          <Route exact path="/profil">
+          <Route exact path="/profil/:userId">
             <Profil />
           </Route>
 

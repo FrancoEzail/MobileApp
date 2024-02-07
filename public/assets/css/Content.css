@@ -419,6 +419,7 @@
     background: rgba(0, 0, 0, 0.07);
     margin: 5px 0;
     padding: 15px 20px;
+    color: #000;
 }
 
 .form-input input ::placeholder {

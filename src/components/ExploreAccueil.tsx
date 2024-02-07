@@ -2,17 +2,17 @@ import React, { useState, useCallback, useEffect  } from 'react';
 import data_img from '../data_img';
 import { useDropzone } from 'react-dropzone';
 import {IonRouterLink } from '@ionic/react';
-import { useParams } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import axios from 'axios';
 interface RouteParams {
     userId : string;
 }
 interface User {
-    id: number;
+    id: string;
     email: string;
     nom: string;
-  }
-  const Comp_profil: React.FC = () =>  {
+}
+const Comp_profil: React.FC = () =>  {
     const [users, setUsers] = useState<User | null>(null);
     const { userId } = useParams<RouteParams>();
     useEffect(() => {
@@ -30,7 +30,7 @@ interface User {
     return(
        <div className="profil-box">
             <div className="profil-img">
-            <IonRouterLink href='/profil'>
+            <IonRouterLink href={`/profil/${userId}`}>
             {
                 data_img.map((profil, index) => (
                     <img src={profil.profil} alt=""/>            
@@ -53,44 +53,20 @@ interface User {
     );  
 };
 
-const UploadImage: React.FC = () =>  {
-    const [uploadedFile, setUploadedFile] = useState<File | null>(null);
-
-    const onDrop = useCallback((acceptedFiles: File[]) => {
-      const file = acceptedFiles[0];
-      setUploadedFile(file);
-    }, []);
-
-    const { getRootProps, getInputProps } = useDropzone({ onDrop });
-
-    return (
-        <div>
-            <div {...getRootProps()} className="dropzone-style">
-                <input {...getInputProps()} />
-                {uploadedFile ? (
-                    <div className='image-uploaded'>
-                        <img
-                            src={URL.createObjectURL(uploadedFile)}
-                            alt="type de fichier invalide"
-                            style={{
-                                width: '100%',
-                                maxHeight: '150px',
-                                borderRadius: '15px',
-                                display: 'flex',
-                                alignItems:'center'
-                            }}
-                        />
-                    </div>
-                ) : null}
-                {!uploadedFile && (
-                    <>
-                        <p>Drag and drop an image or clicked here</p>
-                        <span><i className='fas fa-image'></i></span>
-                    </>
-                )}
-            </div>
-        </div>
-    );
+export const fetchData = async (apiUrl: string) => {
+    try {
+      const response = await fetch(apiUrl);
+  
+      if (!response.ok) {
+        throw new Error("Erreur lors de la récupération des données");
+      }
+  
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("Erreur de requête :", error);
+      throw error;
+    }
 };
 
 const Comp_SubTitle: React.FC = () =>  {
@@ -196,6 +172,49 @@ const Comp_filtre: React.FC = () =>  {
 
 
 const Comp_formulaire: React.FC = () =>  {
+    const [allRegion, setAllRegion] = useState<any[]>([]);
+    useEffect(() => {
+        const fetchAllData = async () => {
+          try {
+            const dataRegion = await fetchData("https://farm-production.up.railway.app/loc/all");
+            setAllRegion(dataRegion);
+          } catch (error) {
+
+          }
+        };
+    
+        fetchAllData();
+    }, []); 
+    const history = useHistory();
+    const[nbrParcelle, setNbrParcelle] = useState(0);
+    const[loc, setLoc] = useState("loc1");
+    const[descrit, setDescrit] = useState("");
+    const { userId } = useParams<RouteParams>();
+
+    const handleNbrChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setNbrParcelle(parseInt(e.target.value));
+    }
+
+    const handleLocChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        setLoc(e.target.value);
+    }
+
+    const handleDescritChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setDescrit(e.target.value);
+    }
+
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        try {
+            const response = await axios.get(`https://farm-production.up.railway.app/terrain/create/${loc}/${descrit}/${userId}/${nbrParcelle}`);
+            // const terrain_id = response.data.id;
+            // localStorage.setItem('terrain_id',terrain_id);
+            console.log(response.data);
+        } catch (error) {
+            console.error("Error:", error);
+        }
+    };
+    
     return(
         <div className="card-form">
             <div className="sub-title-form">
@@ -206,24 +225,27 @@ const Comp_formulaire: React.FC = () =>  {
                 </div>
             </div>
             <div className="form-group">
-                <div className="form-input">
-                    <select name="">
-                        <option value="">Lieu</option>
-                        <option value="">Marovoay</option>
-                    </select>
-                </div>
-                <div className="form-input">
-                    <input type="text" placeholder="Nombre de parcelle" name=""/>
-                </div>
-                <div className="upload-photo">
-                    <UploadImage  />
-                </div>
-                <div className='sub-btn'>
-                    <input type="submit" value="Valider" />
-                    <div className='right-arrow-btn'>
-                        <span><i className="fas fa-arrow-right"></i></span>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-input">
+                        <select name="loc" onChange={handleLocChange} value={loc}>
+                        {allRegion.map((region, index) => (
+                            <option key={region.id} value={region.id}>{region.nom}</option>
+                        ))}
+                        </select>
                     </div>
-                </div>
+                    <div className="form-input">
+                        <input type="number" placeholder="Nombre de parcelle" name="nbrParcelle" onChange={handleNbrChange} />
+                    </div>
+                    <div className="form-input">
+                        <input type="text" placeholder='Description' name='descrit' onChange={handleDescritChange} />
+                    </div>
+                    <div className='sub-btn'>
+                        <input type="submit" value="Valider" />
+                        <div className='right-arrow-btn'>
+                            <span><i className="fas fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     );  
