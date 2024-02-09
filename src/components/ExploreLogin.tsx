@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useHistory } from 'react-router';
 const Comp_Login: React.FC = () => { 
     const history = useHistory();
-    const [email, setEmail] = useState(""); 
-    const [mdp, setMdp] = useState("");
+    const [email, setEmail] = useState("toky@gmail.com"); 
+    const [mdp, setMdp] = useState("toky");
     const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setEmail(e.target.value);
     };
@@ -64,10 +64,10 @@ const Comp_Login: React.FC = () => {
                 <div className="form-group-log">
                     <form onSubmit={handleSubmit}>
                         <div className="form-input-log">
-                            <input type="email" name="email" id="" placeholder="Entrer votre Email" onChange={handleEmailChange}/>
+                            <input type="email" name="email" id="" placeholder="toky@gmail.com" onChange={handleEmailChange}/>
                         </div>
                         <div className="form-input-log">
-                            <input type="password" name="mdp" id="" placeholder="Entrer votre Mot de passe" onChange={handleMdpChange}/>
+                            <input type="password" name="mdp" id="" placeholder="...." onChange={handleMdpChange}/>
                         </div>
                         <div className='btn-log'>
                             <div className='icon-btn-log'>
