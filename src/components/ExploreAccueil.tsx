@@ -78,7 +78,7 @@ const Comp_SubTitle: React.FC = () =>  {
             </div>
             <div className="text-sub-title">
                 <h1>Liste des</h1>
-                <h1>cultures</h1>
+                <h1>terrains</h1>
             </div>
         </div>
     );  
@@ -91,79 +91,49 @@ const Comp_filtre: React.FC = () =>  {
         setBoutonActif(bouton);
       }, 200);
     };
+    const [allTerrain, setAllTerrain] = useState<any[]>([]);
+    useEffect(() => {
+        const fetchAllData = async () => {
+          try {
+            const dataTerrain = await fetchData("https://farm-production.up.railway.app/terrain/all");
+            setAllTerrain(dataTerrain);
+          } catch (error) {
+
+          }
+        };
+        fetchAllData();
+    }, []); 
     return(
-        <div className='filtre-box1'>
-            <nav className='_bar'>
-                <div className="_links">
-                    <ul>
-                        <li className={boutonActif === 1 ? 'active' : ''} onClick={() => handleClick(1)}><a>All</a></li>
-                        <li className={boutonActif === 2 ? 'active' : ''} onClick={() => handleClick(2)}><a>Rice</a></li>
-                        <li className={boutonActif === 3 ? 'active' : ''} onClick={() => handleClick(3)}><a>Corn</a></li>
-                        <li className={boutonActif === 4 ? 'active' : ''} onClick={() => handleClick(4)}><a>Vegetable</a></li>
-                    </ul>
-                </div>
-            </nav>
-            <div className="table-culture">
+        <div className="fitlre-box">
+            <div className="filtre-box2"  style={{ margin: '10px 0' }}>
                 <div className='right-arrow'>
+                    <div className='table-title'>
+                        <h3>Détails par proprio</h3>
+                    </div>
                     <span><i className="fas fa-arrow-right"></i></span>
                 </div>
-                <div className="tableau_style">
-                    <div className='title_bar'>
-                        <div className='title_links'>
-                            <ul>
-                                <li>Proprio</li>
-                                <li>Parcelle</li>
-                                <li>Culture</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="limit-scroll">
-                        <div className='list_bar'>
-                            <div className='list_links'>
-                                <ul>
-                                    <li>Jean Rakoto</li>
-                                    <li>P1</li>
-                                    <li>Rice</li>
-                                    <li><span><i className="far fa-comment"></i></span></li>
-                                    <li><span><i className="fas fa-microphone"></i></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className='list_bar'>
-                            <div className='list_links'>
-                                <ul>
-                                    <li>Jean Rakoto</li>
-                                    <li>P1</li>
-                                    <li>Rice</li>
-                                    <li><span><i className="far fa-comment"></i></span></li>
-                                    <li><span><i className="fas fa-microphone"></i></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className='list_bar'>
-                            <div className='list_links'>
-                                <ul>
-                                    <li>Jean Rakoto</li>
-                                    <li>P1</li>
-                                    <li>Rice</li>
-                                    <li><span><i className="far fa-comment"></i></span></li>
-                                    <li><span><i className="fas fa-microphone"></i></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div className='list_bar'>
-                            <div className='list_links'>
-                                <ul>
-                                    <li>Jean Rakoto</li>
-                                    <li>P1</li>
-                                    <li>Rice</li>
-                                    <li><span><i className="far fa-comment"></i></span></li>
-                                    <li><span><i className="fas fa-microphone"></i></span></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div className="limit-scroll-2">
+                <table className="tableau_style">
+                    <thead>
+                        <tr>
+                            <th>Proprio</th>
+                            <th>Terrain</th>
+                            <th>Nombre Parcelle</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {allTerrain.map((terrain, index) => (
+                            <tr key={index}>
+                                <td>{terrain.idUtilisateur}</td>                    
+                                <td>{terrain.id}</td>
+                                <td>{terrain.nbParcelle}</td>
+                                <td><span><i className="far fa-comment"></i></span></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+                </div>  
             </div>
         </div>
     );
@@ -218,7 +188,7 @@ const Comp_formulaire: React.FC = () =>  {
     return(
         <div className="card-form">
             <div className="sub-title-form">
-                <h3>Creer un terrain</h3>
+                <h3>Créer un terrain</h3>
                 <div className="circle2">
                     <span><i className="fas fa-circle"></i></span>
                     <span><i className="far fa-circle"></i></span>

@@ -1,11 +1,16 @@
 import React, { useState } from "react";
 import {IonRouterLink } from '@ionic/react';
+import { useParams } from "react-router";
 interface HeaderProps {}
+interface RouteParams {
+    userId : string;
+}
 const ExploreHeader: React.FC<HeaderProps> = () => {
     const [show, setShow] = useState(false);
     const menu_burger = () => {
         setShow(!show);
     }
+    const { userId } = useParams<RouteParams>();
     return(
         <header>
             <nav className='nav_bar'>
@@ -14,14 +19,13 @@ const ExploreHeader: React.FC<HeaderProps> = () => {
                 </div>
                 <div className={`nav_links ${show ? "mobile-menu" : "nav_links"}`}>
                     <ul>                       
-                        <li><a href="">Home</a></li>
-                        <IonRouterLink href='/accueil'>
-                            <li><a>Parcelle</a></li>
+                        <IonRouterLink href={`/accueil/${userId}`}>
+                            <li><a>Home</a></li>
                         </IonRouterLink>
-                        <IonRouterLink href='/profil'>
+                        <IonRouterLink href={`/profil/${userId}`}>
                             <li><a>Profil</a></li>
                         </IonRouterLink>
-                        <IonRouterLink href='/login'>
+                        <IonRouterLink href='/'>
                             <li><a>Log out</a></li>
                         </IonRouterLink>
                     </ul>

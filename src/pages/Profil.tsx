@@ -1,5 +1,5 @@
 import ExploreHeader from '../components/ExploreHeader';
-import { Comp_parcelle_culture, Comp_parcelle_detail, Comp_historique, Comp_discu } from '../components/ExploreProfil';
+import { Comp_terrain_liste, Comp_parcelle_detail, Comp_historique, Comp_discu } from '../components/ExploreProfil';
 import { Comp_profil } from '../components/ExploreAccueil';
 const Profil: React.FC = () => {
     return(
@@ -8,7 +8,7 @@ const Profil: React.FC = () => {
             <div className="container-profil">
                 <div className="left-section">
                    <Comp_profil />
-                   <Comp_parcelle_culture />
+                   <Comp_terrain_liste />
                 </div>
                 <div className="center-section">
                    <Comp_parcelle_detail />

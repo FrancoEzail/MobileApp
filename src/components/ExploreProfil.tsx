@@ -1,11 +1,15 @@
 import data_img from '../data_img';
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
+import axios from 'axios';
 
+interface RouteParams {
+    userId : string;
+}
 
 export const fetchData = async (apiUrl: string) => {
     try {
       const response = await fetch(apiUrl);
-  
       if (!response.ok) {
         throw new Error("Erreur lors de la récupération des données");
       }
@@ -16,23 +20,28 @@ export const fetchData = async (apiUrl: string) => {
       console.error("Erreur de requête :", error);
       throw error;
     }
-  };
-const Comp_parcelle_culture: React.FC = () => {
-   
-    const [statsDataGeneral, setStatsDataGeneral] = useState<any[]>([]);
-
-  useEffect(() => {
+};
+const Comp_terrain_liste: React.FC = () => {
+    const { userId } = useParams<RouteParams>();
+    const [terByUser, setTerByUser] = useState<any[]>([]);
+    useEffect(() => {
     const fetchAllData = async () => {
       try {
-        const dataGeneral = await fetchData("https://farm-production.up.railway.app/user/all");      
-        setStatsDataGeneral(dataGeneral);
+        const dataTerByUser = await axios.get(`https://farm-production.up.railway.app/terrain/all/${userId}`);
+        setTerByUser(dataTerByUser.data);
+        
       } catch (error) {
-        // Gérer l'erreur ici
       }
     };
 
     fetchAllData();
-  }, []); 
+}, []); 
+
+    useEffect(() => {
+    const idTerrain = terByUser.map(terrain => terrain.id);
+    console.log("idTerrain:", idTerrain);
+}, [terByUser]); 
+
     return(
         <div className="filtre-box">
             <div className='right-arrow'>
@@ -45,15 +54,17 @@ const Comp_parcelle_culture: React.FC = () => {
             <table className="tableau_style">
                 <thead>
                     <tr>
-                        <th>Culture</th>
-                        <th>Parcelle</th>
+                        <th>Terrain Id</th>
+                        <th>Nbr Parcelle</th>
+                        <th>Localisation</th>
                     </tr>
                 </thead>
                 <tbody>
-                {statsDataGeneral.map((team, index) => (
+                {terByUser.map((team, index) => (
                     <tr key={index}>
                         <td>{team.id}</td>
-                        <td>{team.nom}</td>
+                        <td>{team.nbParcelle}</td>
+                        <td>{team.idLocalisation}</td>
                     </tr>
                 ))}
                 </tbody>
@@ -260,4 +271,4 @@ const Comp_discu: React.FC = () => {
     );
 };
 
-export { Comp_parcelle_culture, Comp_parcelle_detail, Comp_historique, Comp_discu };
+export { Comp_terrain_liste, Comp_parcelle_detail, Comp_historique, Comp_discu };
